@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Velas - 首页</title>
+</head>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<body>
+    <header>
+        <nav-titlebar></nav-titlebar>
+        <div id="banner">
+            <div class="inner">
+                <div class="nhr"></div>
+                <h1>VELAS</h1>
+                <div class="hr"></div>
+                <p class="sub-heading"><strong>春观夜樱、夏望繁星、秋赏满月、冬会初雪。</strong><br>春は夜桜 夏には星 秋に満月 冬には雪。</p>
+                <a href="#"><button>我眼中的幸福</button></a>
+            </div>
+        </div>
+    </header>
+</body>
+<script src="./public/components/main-frame.js"></script>
+<script>
+    new Vue({
+        el: 'header',
+        components: {
+            'nav-titlebar': navTitle
+        }
+    })
+</script>
+
+</html>
