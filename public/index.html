@@ -5,7 +5,15 @@
     <meta charset="UTF-8">
     <title>Velas - 首页</title>
 </head>
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="./js/vue.js"></script>
+<!--build:js js/index.min.js -->
+<script src="./components/main-frame.js"></script>
+<!--endbuild-->
+<!--build:css css/index.min.css-->
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/navbar.css">
+<link rel="stylesheet" href="./css/normalize.css">
+<!--endbuild-->
 <body>
     <header>
         <nav-titlebar></nav-titlebar>
@@ -19,7 +27,7 @@
         </div>
     </header>
 </body>
-<script src="./components/main-frame.js"></script>
+
 <script>
     new Vue({
         el: 'header',

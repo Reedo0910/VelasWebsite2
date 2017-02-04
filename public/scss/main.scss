@@ -1,0 +1,44 @@
+ $total-font: "Microsoft YaHei",
+ 微软雅黑,
+ Arial,
+ sans-serif;
+ $font-size-p:16px;
+ 
+ body {
+     font-family: $total-font;
+     background: {
+         color: #444;
+         image: url(../images/background.jpg);
+         repeat: no-repeat;
+         size: cover;
+         position: 0 0;
+         attachment: fixed;
+     }
+ }
+ 
+ @font-face {
+     font-family: 'NotoSansHans-Regular';
+     src: url(../fonts/NotoSansHans-Regular.ttf);
+     src: url(../fonts/NotoSansHans-Regular.eot);
+ }
+ 
+ .clearfix:after {
+     content: ' ';
+     display: block;
+     clear: both;
+ }
+ 
+ ul {
+     margin: 0;
+ }
+ 
+ h3 {
+     font-size: 20px;
+ }
+ 
+ p {
+     font-size: $font-size-p;
+     letter-spacing: 1px;
+ }
+ 
+ 
