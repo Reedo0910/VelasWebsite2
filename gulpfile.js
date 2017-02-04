@@ -61,6 +61,7 @@ gulp.task('useref', function () {
 gulp.task('watch', ['browserSync', 'sass'], function () {
     gulp.watch('public/scss/**/*.+(sass|scss)', ['sass'])
     gulp.watch('public/js/**/*.js', browserSync.reload)
+    gulp.watch('public/components/**/*.js', browserSync.reload)
     gulp.watch('public/**/*.html', browserSync.reload)
 })
 

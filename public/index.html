@@ -7,16 +7,20 @@
 </head>
 <script src="./js/vue.js"></script>
 <!--build:js js/index.min.js -->
-<script src="./components/main-frame.js"></script>
+<script src="./components/nav-titlebar.js"></script>
 <!--endbuild-->
 <!--build:css css/index.min.css-->
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="./css/navbar.css">
 <link rel="stylesheet" href="./css/normalize.css">
 <!--endbuild-->
+
 <body>
     <header>
-        <nav-titlebar></nav-titlebar>
+        <nav>
+            <div id="logo"><a href="index.html">Velas</a></div>
+            <nav-titlebar></nav-titlebar>
+        </nav>
         <div id="banner">
             <div class="inner">
                 <div class="nhr"></div>
@@ -27,14 +31,14 @@
         </div>
     </header>
 </body>
-
 <script>
-    new Vue({
+    var navTitleBar = new Vue({
         el: 'header',
         components: {
             'nav-titlebar': navTitle
         }
     })
+    setActive(0);
 </script>
 
 </html>

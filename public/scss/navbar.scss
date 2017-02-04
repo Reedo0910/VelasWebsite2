@@ -1,46 +1,62 @@
+//p的字体大小
 $font-size-p:16px;
+//过渡动画样式
+@mixin link-transition($time) {
+    -webkit-transition: all $time ease-out;
+    -moz-transition: all $time ease-out;
+    transition: all $time ease-out;
+}
+
 nav {
-     background: #777;
-     height: 50px;
-     width: 100%;
-     background-color: rgba(0, 0, 0, 0);
-     ul {
-         list-style: none;
-         margin: 0 25px 0 0;
-         float: right;
-         li {
-             display: inline-block;
-             &:not(.active) a:hover {
-                 -webkit-transition: all 0.1s ease-out;
-                 -moz-transition: all 0.1s ease-out;
-                 transition: all 0.1s ease-out;
-                 background-color: #fff;
-                 color: #777;
-             }
-         }
-     }
-     #logo {
-         float: left;
-         font-size: 20px;
-         font-weight: 700;
-         letter-spacing: 1px;
-         margin-left: 25px;
-         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-     }
-     #logo a,
-     ul li a {
-         line-height: 50px;
-         text-decoration: none;
-         display: inline-block;
-         height: inherit;
-         color: #fff;
-         padding: 0 20px;
-         -webkit-transition: all 0.2s ease;
-         -moz-transition: all 0.2s ease;
-         transition: all 0.2s ease;
-     }
-     .active a {
-         background: #fff;
-         color: #777;
-     }
- }
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    padding-top: 20px;
+    ul {
+        list-style: none;
+        margin: 0 25px 0 0;
+        float: right;
+        li {
+            display: inline-block;
+            a {
+                color: #ccc;
+                &:hover {
+                    @include link-transition(0.2s);
+                }
+            }
+            &.active a {
+                color: #fff;
+            }
+            &:not(.active) a:hover {
+                @include link-transition(0.2s);
+                color: #fff;
+            }
+            &.nav-talk-button {
+                border-radius: 30px;
+                background-color: darkred;
+                box-shadow: #000 -1px 1px 7px 0px;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    #logo {
+        float: left;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-left: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        a {
+            color: #fff;
+        }
+    }
+    #logo a,
+    ul li a {
+        line-height: 30px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0 20px;
+    }
+}
