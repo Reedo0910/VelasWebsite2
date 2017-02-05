@@ -1,0 +1,77 @@
+//过渡动画样式
+@mixin link-transition($time) {
+    -webkit-transition: all $time ease-out;
+    -moz-transition: all $time ease-out;
+    transition: all $time ease-out;
+}
+
+#footer {
+    background-color: rgba(0, 0, 0, 0.93);
+    color: #fff;
+    width: 100%;
+    min-height: 200px;
+    text-align: center;
+    p {
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    .footer-contact {
+        margin: 0;
+        padding-top: 50px;
+    }
+    .hr {
+        background-color: #fff;
+        margin: 30px auto 10px;
+        height: 1px;
+    }
+    .share-group {
+        padding: 20px 40px 40px;
+        display: block;
+        margin: 0 auto;
+        a {
+            color: #fff;
+            text-decoration: none;
+            @include link-transition(0.2s);
+            li {
+                display: inline-block;
+                padding: 10px;
+            }
+            &:hover li {
+                transform: translateY(-5px);
+                @include link-transition(0.2s);
+            }
+            &:nth-child(1):hover li {
+                color: #17b2ec;
+            }
+            &:nth-child(2):hover li {
+                color: #ff0000;
+            }
+            &:nth-child(3):hover li {
+                color: #545454;
+            }
+        }
+    }
+    #copy {
+        p {
+            padding: 20px 0 15px;
+            font-size: 14px;
+            margin: 0 auto;
+        }
+    }
+    .gototop {
+        width: 32px;
+        margin: 0 84%;
+        border: #fff solid 1px;
+        a {
+            display: block;
+            text-decoration: none;
+            color: #ccc;
+            @include link-transition(0.15s);
+            &:hover {
+                @include link-transition(0.15s);
+                color: rgba(0, 13, 33, 0.88);
+                background-color: #fff;
+            }
+        }
+    }
+}

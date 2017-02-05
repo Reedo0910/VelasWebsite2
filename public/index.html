@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <title>Velas - 首页</title>
 </head>
-<script src="./js/vue.js"></script>
 <!--build:js js/index.min.js -->
+<script src="./js/vue.js"></script>
 <script src="./components/nav-titlebar.js"></script>
+<script src="./components/footer.js"></script>
 <!--endbuild-->
 <!--build:css css/index.min.css-->
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="./css/navbar.css">
 <link rel="stylesheet" href="./css/normalize.css">
 <link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/footer.css">
 <!--endbuild-->
 
 <body>
     <header>
-        <nav id="nav">
-            <div id="logo"><a href="index.html">Velas</a></div>
-            <nav-titlebar></nav-titlebar>
-        </nav>
+        <nav-titlebar></nav-titlebar>
         <div id="banner">
             <div class="inner">
                 <h1>VELAS</h1>
@@ -39,21 +39,31 @@
     <div class="context">
         <h2 class="context-big-headtitle">Welcome to Velas</h2>
         <div class="hr"></div>
-        <p class="context-intro">我是Zeee。<br>Velas是我设计的个人博客型网站，用于分享一些我私人的喜好与个人经验。<br>也希望Velas能给你带来一些感悟与轻松愉悦的体验。</p>
+        <p class="context-intro">我是Zeee。<br>Velas是我设计的个人博客型网站，<br>用于分享一些我私人的喜好与个人经验。<br>如果Velas能给你带来一些灵感又或是轻松愉悦的体验，<br>这将是我的荣幸。</p>
         <div class="context-head"></div>
         <div class="card-group" id="card-group">
             <a v-for="card in cards" class="card" :href="card.href">
-                <span>{{card.title}}</span>
-                <span>{{card.intro}}</span>
+                <span class="card-title">{{card.title}}</span>
+                <span class="card-intro">{{card.intro}}</span>
             </a>
         </div>
     </div>
+    <footer>
+        <footer-block></footer-block>
+    </footer>
 </body>
 <script>
     var navTitleBar = new Vue({
         el: 'header',
         components: {
             'nav-titlebar': navTitle
+        }
+    });
+    
+    var footerBlock = new Vue({
+        el: 'footer',
+        components: {
+            'footer-block': footer
         }
     });
 
@@ -63,7 +73,7 @@
             cards: [{
                     href: '#',
                     title: '音乐',
-                    intro: '我喜欢的音乐'
+                    intro: '我喜欢的'
                 },
                 {
                     href: '#',
@@ -79,19 +89,8 @@
         }
     })
     setActive(0);
-
     window.onscroll = function () {
-        var top = document.documentElement.scrollTop || document.body.scrollTop;
-        var navBar = document.getElementById('nav');
-        if (top <= 50) {
-            navBar.style.backgroundColor = 'rgba(255, 255, 255, 0)';
-            navBar.style.boxShadow = 'none';
-            navBar.style.paddingTop = '20px';
-        } else {
-            navBar.style.backgroundColor = 'rgba(220, 220, 220, 0.85)';
-            navBar.style.boxShadow = '#444 0 0 10px';
-            navBar.style.paddingTop = '10px';
-        }
+        scrollOnTop();
     }
 </script>
 
