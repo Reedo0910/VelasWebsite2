@@ -1,5 +1,5 @@
 #footer {
-  background-color: rgba(0, 0, 0, 0.93);
+  background-color: #000;
   color: #fff;
   width: 100%;
   min-height: 200px;
@@ -8,8 +8,14 @@
     font-weight: 300;
     letter-spacing: 1px; }
   #footer .footer-contact {
-    margin: 0;
-    padding-top: 50px; }
+    width: 200px;
+    line-height: 50px;
+    margin: 0 auto;
+    position: relative;
+    background-color: green;
+    top: -25px;
+    box-shadow: #000 0 0 30px;
+    box-sizing: border-box; }
   #footer .hr {
     background-color: #fff;
     margin: 30px auto 10px;
@@ -27,11 +33,25 @@
       #footer .share-group a li {
         display: inline-block;
         padding: 10px; }
+        #footer .share-group a li p {
+          color: #fff;
+          opacity: 0;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 12px;
+          -webkit-transition: all 0.2s ease-out;
+          -moz-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out; }
       #footer .share-group a:hover li {
         transform: translateY(-5px);
         -webkit-transition: all 0.2s ease-out;
         -moz-transition: all 0.2s ease-out;
         transition: all 0.2s ease-out; }
+        #footer .share-group a:hover li p {
+          opacity: 0.9;
+          transform: translateY(5px);
+          -webkit-transition: all 0.2s ease-out;
+          -moz-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out; }
       #footer .share-group a:nth-child(1):hover li {
         color: #17b2ec; }
       #footer .share-group a:nth-child(2):hover li {
@@ -43,19 +63,25 @@
     font-size: 14px;
     margin: 0 auto; }
   #footer .gototop {
+    position: fixed;
+    padding: 5px;
+    bottom: 60px;
+    right: 6%;
     width: 32px;
-    margin: 0 84%;
-    border: #fff solid 1px; }
-    #footer .gototop a {
-      display: block;
-      text-decoration: none;
-      color: #ccc;
-      -webkit-transition: all 0.15s ease-out;
-      -moz-transition: all 0.15s ease-out;
-      transition: all 0.15s ease-out; }
-      #footer .gototop a:hover {
-        -webkit-transition: all 0.15s ease-out;
-        -moz-transition: all 0.15s ease-out;
-        transition: all 0.15s ease-out;
-        color: rgba(0, 13, 33, 0.88);
-        background-color: #fff; }
+    border-radius: 32px;
+    background-color: #2e7d32;
+    box-shadow: #000 0 0 10px;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
+    -moz-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease; }
+    #footer .gototop:hover {
+      color: #2e7d32;
+      background-color: #fff;
+      -webkit-transition: background-color 0.15s ease, color 0.15s ease;
+      -moz-transition: background-color 0.15s ease, color 0.15s ease;
+      transition: background-color 0.15s ease, color 0.15s ease; }

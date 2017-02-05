@@ -1,12 +1,12 @@
 //过渡动画样式
-@mixin link-transition($time) {
-    -webkit-transition: all $time ease-out;
-    -moz-transition: all $time ease-out;
-    transition: all $time ease-out;
+@mixin link-transition($time, $type:all) {
+    -webkit-transition: $type $time ease-out;
+    -moz-transition: $type $time ease-out;
+    transition: $type $time ease-out;
 }
 
 #footer {
-    background-color: rgba(0, 0, 0, 0.93);
+    background-color: #000;
     color: #fff;
     width: 100%;
     min-height: 200px;
@@ -16,8 +16,14 @@
         letter-spacing: 1px;
     }
     .footer-contact {
-        margin: 0;
-        padding-top: 50px;
+        width: 200px;
+        line-height: 50px;
+        margin: 0 auto;
+        position: relative;
+        background-color: green;
+        top: -25px;
+        box-shadow: #000 0 0 30px;
+        box-sizing: border-box;
     }
     .hr {
         background-color: #fff;
@@ -35,10 +41,22 @@
             li {
                 display: inline-block;
                 padding: 10px;
+                p {
+                    color: #fff;
+                    opacity: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;
+                    @include link-transition(0.2s);
+                }
             }
             &:hover li {
                 transform: translateY(-5px);
                 @include link-transition(0.2s);
+                p {
+                    opacity: 0.9;
+                    transform: translateY(5px);
+                    @include link-transition(0.2s);
+                }
             }
             &:nth-child(1):hover li {
                 color: #17b2ec;
@@ -59,19 +77,28 @@
         }
     }
     .gototop {
+        position: fixed;
+        padding: 5px;
+        bottom: 60px;
+        right: 6%;
         width: 32px;
-        margin: 0 84%;
-        border: #fff solid 1px;
-        a {
-            display: block;
-            text-decoration: none;
-            color: #ccc;
-            @include link-transition(0.15s);
-            &:hover {
-                @include link-transition(0.15s);
-                color: rgba(0, 13, 33, 0.88);
-                background-color: #fff;
-            }
+        border-radius: 32px;
+        background-color: #2e7d32;
+        box-shadow: #000 0 0 10px;
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
+        -moz-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
+        transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
+        &:hover {
+            color: #2e7d32;
+            background-color: #fff;
+            -webkit-transition: background-color 0.15s ease, color 0.15s ease;
+            -moz-transition: background-color 0.15s ease, color 0.15s ease;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
     }
 }

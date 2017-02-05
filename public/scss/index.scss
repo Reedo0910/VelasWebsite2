@@ -97,11 +97,12 @@ header {
 
 .context {
     width: 100%;
-    height: 800px;
+    min-height: 750px;
     background-color: #eee;
     position: relative;
     text-align: center;
     box-shadow: #444 0 0 30px;
+    padding-bottom: 60px;
     .context-big-headtitle {
         text-transform: uppercase;
         margin: 0;
@@ -113,7 +114,6 @@ header {
     .context-intro {
         color: #888;
         margin: 0 auto;
-        width: 500px;
         line-height: 30px;
     }
     .hr {
@@ -134,25 +134,47 @@ header {
         }
     }
     .card-group {
+        max-width: 765px;
         margin: 50px auto;
-        max-width: 800px;
+        display: flex;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-flow: row wrap;
         .card {
-            float: left;
-            width: 205px;
             height: 205px;
+            width: 205px;
             position: relative;
             box-shadow: 8px 6px 13px -8px #888;
-            box-sizing: border-box;
             text-align: center;
-            margin-left: 50px;
-            margin-bottom: 50px;
             text-decoration: none;
+            margin-bottom: 30px;
             color: #fff;
             opacity: 0.85;
+            background: {
+                size: cover;
+                repeat: no-repeat;
+                position: 0 0;
+            }
             @include link-transition(0.2s);
-            &:hover {
-                opacity: 1;
-                box-shadow: 8px 6px 25px -8px #666;
+            .card-title,
+            .card-intro {
+                position: relative;
+                float: left;
+                width: 100%;
+                text-align: left;
+                top: 140px;
+                padding-left: 15px;
+                box-sizing: border-box;
+            }
+            .card-title {
+                font-size: 1.4em;
+                text-shadow: #222 -1px 1px 3px;
+            }
+            .card-intro {
+                font-size: .8em;
+                text-shadow: #222 -1px 1px 3px;
+                top: 130px;
+                opacity: 0;
                 @include link-transition(0.2s);
             }
             &:nth-child(1) {
@@ -170,40 +192,14 @@ header {
                     image: url(../images/cardgroup/card4.jpg);
                 }
             }
-            &:nth-child(1),
-            &:nth-child(2),
-            &:nth-child(3) {
-                background: {
-                    size: cover;
-                    repeat: no-repeat;
-                    position: 0 0;
-                }
-                .card-title,
+            &:hover {
+                opacity: 1;
+                box-shadow: 8px 6px 25px -8px #666;
+                @include link-transition(0.2s);
                 .card-intro {
-                    position: relative;
-                    float: left;
-                    width: 100%;
-                    text-align: left;
+                    opacity: 0.9;
                     top: 140px;
-                    left: 15px;
-                }
-                .card-title {
-                    font-size: 1.4em;
-                    text-shadow: #222 -1px 1px 3px;
-                }
-                .card-intro {
-                    font-size: .8em;
-                    text-shadow: #222 -1px 1px 3px;
-                    top: 130px;
-                    opacity: 0;
                     @include link-transition(0.2s);
-                }
-                &:hover {
-                    .card-intro {
-                        opacity: 0.9;
-                        top: 140px;
-                        @include link-transition(0.2s);
-                    }
                 }
             }
         }

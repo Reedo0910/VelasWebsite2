@@ -59,7 +59,7 @@
             'nav-titlebar': navTitle
         }
     });
-    
+
     var footerBlock = new Vue({
         el: 'footer',
         components: {
@@ -90,7 +90,11 @@
     })
     setActive(0);
     window.onscroll = function () {
-        scrollOnTop();
+        navScrollOnTop();
+        gttScrollOnTop();
+    }
+    window.onload = function () {
+        goToTop();
     }
 </script>
 

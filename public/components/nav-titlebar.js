@@ -20,7 +20,7 @@ function setActive(index) {
     }
 }
 
-function scrollOnTop() {
+function navScrollOnTop() {
     var top = document.documentElement.scrollTop || document.body.scrollTop;
     var navBar = document.getElementById('nav');
     if (top <= 50) {
@@ -30,6 +30,7 @@ function scrollOnTop() {
     } else {
         navBar.style.backgroundColor = 'rgba(92, 107, 192, 0.59)';
         navBar.style.boxShadow = '#444 0 0 10px';
-        navBar.style.paddingTop = '10px';
+        navBar.style.paddingTop = '12px';
+        navBar.style.height = '40px';
     }
 }

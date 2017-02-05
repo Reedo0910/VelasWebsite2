@@ -74,11 +74,12 @@ header {
 
 .context {
   width: 100%;
-  height: 800px;
+  min-height: 750px;
   background-color: #eee;
   position: relative;
   text-align: center;
-  box-shadow: #444 0 0 30px; }
+  box-shadow: #444 0 0 30px;
+  padding-bottom: 60px; }
   .context .context-big-headtitle {
     text-transform: uppercase;
     margin: 0;
@@ -89,7 +90,6 @@ header {
   .context .context-intro {
     color: #888;
     margin: 0 auto;
-    width: 500px;
     line-height: 30px; }
   .context .hr {
     margin: 20px auto;
@@ -105,27 +105,45 @@ header {
     background-repeat: no-repeat;
     background-position: -10px 0; }
   .context .card-group {
+    max-width: 765px;
     margin: 50px auto;
-    max-width: 800px; }
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-flow: row wrap; }
     .context .card-group .card {
-      float: left;
-      width: 205px;
       height: 205px;
+      width: 205px;
       position: relative;
       box-shadow: 8px 6px 13px -8px #888;
-      box-sizing: border-box;
       text-align: center;
-      margin-left: 50px;
-      margin-bottom: 50px;
       text-decoration: none;
+      margin-bottom: 30px;
       color: #fff;
       opacity: 0.85;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 0 0;
       -webkit-transition: all 0.2s ease-out;
       -moz-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
-      .context .card-group .card:hover {
-        opacity: 1;
-        box-shadow: 8px 6px 25px -8px #666;
+      .context .card-group .card .card-title,
+      .context .card-group .card .card-intro {
+        position: relative;
+        float: left;
+        width: 100%;
+        text-align: left;
+        top: 140px;
+        padding-left: 15px;
+        box-sizing: border-box; }
+      .context .card-group .card .card-title {
+        font-size: 1.4em;
+        text-shadow: #222 -1px 1px 3px; }
+      .context .card-group .card .card-intro {
+        font-size: .8em;
+        text-shadow: #222 -1px 1px 3px;
+        top: 130px;
+        opacity: 0;
         -webkit-transition: all 0.2s ease-out;
         -moz-transition: all 0.2s ease-out;
         transition: all 0.2s ease-out; }
@@ -135,32 +153,13 @@ header {
         background-image: url(../images/cardgroup/card2.jpg); }
       .context .card-group .card:nth-child(3) {
         background-image: url(../images/cardgroup/card4.jpg); }
-      .context .card-group .card:nth-child(1), .context .card-group .card:nth-child(2), .context .card-group .card:nth-child(3) {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 0 0; }
-        .context .card-group .card:nth-child(1) .card-title,
-        .context .card-group .card:nth-child(1) .card-intro, .context .card-group .card:nth-child(2) .card-title,
-        .context .card-group .card:nth-child(2) .card-intro, .context .card-group .card:nth-child(3) .card-title,
-        .context .card-group .card:nth-child(3) .card-intro {
-          position: relative;
-          float: left;
-          width: 100%;
-          text-align: left;
-          top: 140px;
-          left: 15px; }
-        .context .card-group .card:nth-child(1) .card-title, .context .card-group .card:nth-child(2) .card-title, .context .card-group .card:nth-child(3) .card-title {
-          font-size: 1.4em;
-          text-shadow: #222 -1px 1px 3px; }
-        .context .card-group .card:nth-child(1) .card-intro, .context .card-group .card:nth-child(2) .card-intro, .context .card-group .card:nth-child(3) .card-intro {
-          font-size: .8em;
-          text-shadow: #222 -1px 1px 3px;
-          top: 130px;
-          opacity: 0;
-          -webkit-transition: all 0.2s ease-out;
-          -moz-transition: all 0.2s ease-out;
-          transition: all 0.2s ease-out; }
-        .context .card-group .card:nth-child(1):hover .card-intro, .context .card-group .card:nth-child(2):hover .card-intro, .context .card-group .card:nth-child(3):hover .card-intro {
+      .context .card-group .card:hover {
+        opacity: 1;
+        box-shadow: 8px 6px 25px -8px #666;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out; }
+        .context .card-group .card:hover .card-intro {
           opacity: 0.9;
           top: 140px;
           -webkit-transition: all 0.2s ease-out;
