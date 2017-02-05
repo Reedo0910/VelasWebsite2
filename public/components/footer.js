@@ -34,7 +34,7 @@ function goToTop() {
 function gttScrollOnTop() {
     var top = document.documentElement.scrollTop || document.body.scrollTop;
     var gttBtn = document.getElementById('gototop');
-    if (top <= 180) {
+    if (top <= 200) {
         gttBtn.style.opacity = 0;
         gttBtn.style.visibility = 'hidden';
     } else {

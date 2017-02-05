@@ -28,7 +28,7 @@ function navScrollOnTop() {
         navBar.style.boxShadow = 'none';
         navBar.style.paddingTop = '20px';
     } else {
-        navBar.style.backgroundColor = 'rgba(92, 107, 192, 0.59)';
+        navBar.style.backgroundColor = 'rgba(92, 107, 192, 0.85)';
         navBar.style.boxShadow = '#444 0 0 10px';
         navBar.style.paddingTop = '12px';
         navBar.style.height = '40px';
