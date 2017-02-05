@@ -1,8 +1,13 @@
 nav {
   height: 50px;
   width: 100%;
-  background-color: transparent;
-  padding-top: 20px; }
+  background-color: rgba(255, 255, 255, 0);
+  padding-top: 20px;
+  position: fixed;
+  z-index: 1000;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
   nav ul {
     list-style: none;
     margin: 0 25px 0 0;
@@ -10,11 +15,10 @@ nav {
     nav ul li {
       display: inline-block; }
       nav ul li a {
-        color: #ccc; }
-        nav ul li a:hover {
-          -webkit-transition: all 0.2s ease-out;
-          -moz-transition: all 0.2s ease-out;
-          transition: all 0.2s ease-out; }
+        color: #ccc;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out; }
       nav ul li.active a {
         color: #fff; }
       nav ul li:not(.active) a:hover {
@@ -24,10 +28,19 @@ nav {
         color: #fff; }
       nav ul li.nav-talk-button {
         border-radius: 30px;
-        background-color: darkred;
-        box-shadow: #000 -1px 1px 7px 0px; }
+        background-color: #0b00dc;
+        box-shadow: #222 -1px 1px 7px 0px;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out; }
         nav ul li.nav-talk-button a {
           color: #fff; }
+        nav ul li.nav-talk-button:hover {
+          background-color: #0900b3;
+          box-shadow: #222 -1px 1px 10px 0px;
+          -webkit-transition: all 0.2s ease-out;
+          -moz-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out; }
   nav #logo {
     float: left;
     font-size: 20px;
@@ -42,4 +55,5 @@ nav {
     line-height: 30px;
     text-decoration: none;
     display: inline-block;
-    padding: 0 20px; }
+    padding: 0 20px;
+    text-shadow: #222 -1px 1px 3px; }

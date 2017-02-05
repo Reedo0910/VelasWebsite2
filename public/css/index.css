@@ -1,0 +1,134 @@
+.hr {
+  margin: 0px;
+  width: 100px;
+  background-color: #000;
+  height: 2px; }
+
+body {
+  background-color: #444;
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  background-attachment: fixed; }
+
+header {
+  width: 100%;
+  min-height: 700px;
+  background-color: rgba(255, 255, 255, 0.4); }
+  header .header-pic-intro {
+    font-size: 10px;
+    position: absolute;
+    bottom: -10px;
+    right: 25px;
+    color: #444;
+    margin: 0; }
+  header #banner .inner {
+    max-width: 515px;
+    margin: 0 auto;
+    position: relative;
+    top: 150px;
+    color: #000;
+    box-sizing: border-box;
+    text-shadow: #666 0px 1px 3px; }
+    header #banner .inner h1 {
+      line-height: 90px;
+      letter-spacing: 5px;
+      text-align: right;
+      font-size: 40px;
+      font-weight: 500; }
+    header #banner .inner a {
+      color: #fff;
+      text-decoration: none; }
+    header #banner .inner .sub-heading {
+      line-height: 40px;
+      top: 56px; }
+    header #banner .inner h1,
+    header #banner .inner .sub-heading {
+      position: relative;
+      display: inline-block;
+      margin: 0 40px;
+      z-index: 200; }
+    header #banner .inner .hr {
+      box-shadow: #222 -1px 1px 10px 0px;
+      left: 78px;
+      position: relative;
+      z-index: 200; }
+    header #banner .inner .decorate-box {
+      width: 265px;
+      height: 265px;
+      float: left;
+      position: relative;
+      z-index: 10;
+      top: -110px;
+      right: 110px;
+      box-shadow: #222 -2px 3px 19px 0px;
+      background-image: url(../images/background.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 0;
+      background-attachment: fixed;
+      opacity: 0.9; }
+
+.context {
+  width: 100%;
+  height: 1000px;
+  background-color: #eee;
+  position: relative;
+  text-align: center;
+  box-shadow: #444 0 0 30px; }
+  .context .context-big-headtitle {
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 30px;
+    font-weight: 300;
+    font-size: 44px;
+    color: #444; }
+  .context .context-intro {
+    color: #888;
+    margin: 0 auto;
+    width: 500px;
+    line-height: 30px; }
+  .context .hr {
+    margin: 20px auto;
+    position: relative; }
+  .context .context-head {
+    position: absolute;
+    top: -55px;
+    right: 50px;
+    width: 200px;
+    height: 200px;
+    background-image: url(../images/head.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -10px 0; }
+  .context .card-group {
+    margin: 50px auto;
+    max-width: 800px; }
+    .context .card-group .card {
+      float: left;
+      width: 205px;
+      height: 205px;
+      position: relative;
+      box-shadow: 8px 6px 13px -8px #888;
+      box-sizing: border-box;
+      text-align: center;
+      margin-left: 50px;
+      margin-bottom: 50px;
+      text-decoration: none;
+      color: #fff; }
+      .context .card-group .card:nth-child(1) {
+        background-image: url(../images/cardgroup/card1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 0; }
+      .context .card-group .card:nth-child(2) {
+        background-image: url(../images/cardgroup/card2.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 0; }
+      .context .card-group .card:nth-child(3) {
+        background-image: url(../images/cardgroup/card4.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0 0; }

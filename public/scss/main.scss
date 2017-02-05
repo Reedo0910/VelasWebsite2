@@ -3,17 +3,8 @@
  Arial,
  sans-serif;
  $font-size-p:16px;
- 
  body {
      font-family: $total-font;
-     background: {
-         color: #444;
-         image: url(../images/background.jpg);
-         repeat: no-repeat;
-         size: cover;
-         position: 0 0;
-         attachment: fixed;
-     }
  }
  
  @font-face {
@@ -40,5 +31,3 @@
      font-size: $font-size-p;
      letter-spacing: 1px;
  }
- 
- 

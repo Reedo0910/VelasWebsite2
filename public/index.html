@@ -13,23 +13,41 @@
 <link rel="stylesheet" href="./css/main.css">
 <link rel="stylesheet" href="./css/navbar.css">
 <link rel="stylesheet" href="./css/normalize.css">
+<link rel="stylesheet" href="./css/index.css">
 <!--endbuild-->
 
 <body>
     <header>
-        <nav>
+        <nav id="nav">
             <div id="logo"><a href="index.html">Velas</a></div>
             <nav-titlebar></nav-titlebar>
         </nav>
         <div id="banner">
             <div class="inner">
-                <div class="nhr"></div>
                 <h1>VELAS</h1>
+                <p class="sub-heading">
+                    能共你一起
+                    <br><strong>春观夜樱、夏望繁星、
+                    <br>秋赏满月、冬会初雪。</strong>
+                    <br>这就是我感到幸福的理由。</p>
                 <div class="hr"></div>
-                <p class="sub-heading"><strong>春观夜樱、夏望繁星、秋赏满月、冬会初雪。</strong><br>春は夜桜 夏には星 秋に満月 冬には雪。</p>
+                <div class="decorate-box"></div>
             </div>
         </div>
+        <p class="header-pic-intro">关于图片：加拿大班夫国家公园 Banff National Park</p>
     </header>
+    <div class="context">
+        <h2 class="context-big-headtitle">Welcome to Velas</h2>
+        <div class="hr"></div>
+        <p class="context-intro">我是Zeee。<br>Velas是我设计的个人博客型网站，用于分享一些我私人的喜好与个人经验。<br>也希望Velas能给你带来一些感悟与轻松愉悦的体验。</p>
+        <div class="context-head"></div>
+        <div class="card-group" id="card-group">
+            <a v-for="card in cards" class="card" :href="card.href">
+                <span>{{card.title}}</span>
+                <span>{{card.intro}}</span>
+            </a>
+        </div>
+    </div>
 </body>
 <script>
     var navTitleBar = new Vue({
@@ -37,8 +55,44 @@
         components: {
             'nav-titlebar': navTitle
         }
+    });
+
+    var cardGroup = new Vue({
+        el: '#card-group',
+        data: {
+            cards: [{
+                    href: '#',
+                    title: '音乐',
+                    intro: '我喜欢的音乐'
+                },
+                {
+                    href: '#',
+                    title: '美食',
+                    intro: '好吃的(╹ڡ╹ )'
+                },
+                {
+                    href: '#',
+                    title: '电影',
+                    intro: '另一种人生'
+                },
+            ]
+        }
     })
     setActive(0);
+
+    window.onscroll = function () {
+        var top = document.documentElement.scrollTop || document.body.scrollTop;
+        var navBar = document.getElementById('nav');
+        if (top <= 50) {
+            navBar.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+            navBar.style.boxShadow = 'none';
+            navBar.style.paddingTop = '20px';
+        } else {
+            navBar.style.backgroundColor = 'rgba(220, 220, 220, 0.85)';
+            navBar.style.boxShadow = '#444 0 0 10px';
+            navBar.style.paddingTop = '10px';
+        }
+    }
 </script>
 
 </html>
