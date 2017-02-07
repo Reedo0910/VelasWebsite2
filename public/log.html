@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <title>Velas - 日志</title>
+    <meta charset="UTF-8">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--build:js js/index.min.js -->
+    <script src="./js/vue.js"></script>
+    <script src="./components/nav-titlebar.js"></script>
+    <script src="./components/footer.js"></script>
+    <!--endbuild-->
+    <!--build:css css/index.min.css-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/log.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <!--endbuild-->
+</head>
+
+<body>
+    <header>
+        <nav-titlebar></nav-titlebar>
+        <h1>更新日志</h1>
+        <p>让每天都来点新意思</p>
+    </header>
+    <main>
+        <div id="note">
+            <!--日志模板  
+              <div class="notecard">
+                <h2>x月xx日</h2>
+                <ol>
+                    <li></li>
+                </ol>
+            </div>
+            -->
+
+            <div class="postscript">
+                <div class="hr"></div>
+                <p>网站作者Zeee将把自己的奇思妙想和新学到的前端知识投入到Velas中
+                    <br> 每一天，在你看到或者看不到的地方，Velas都变得比昨天更成熟一些，更精致一些。
+                    <br> 感谢你的到来，与Zeee一同将Velas变得更美好。
+                    <br> 没有你的支持就没有Velas的今天，Zeee在这里诚心向所有到访者致谢。
+                    <br>
+                    <br> *想获得本站的最佳体验，请在<span>Firefox</span>、 <span>Chrome</span>、 <span>Microsoft Edge</span>上浏览，或将你的浏览器升级至最新版本。
+                </p>
+                <div class="blank"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <footer-block></footer-block>
+    </footer>
+</body>
+<!--<script src="js/log.js"></script>-->
+<script>
+    var navTitleBar = new Vue({
+        el: 'header',
+        components: {
+            'nav-titlebar': navTitle
+        }
+    });
+
+    var footerBlock = new Vue({
+        el: 'footer',
+        components: {
+            'footer-block': footer
+        }
+    });
+    setActive(2);
+    goToTop();
+    window.onscroll = function() {
+        navScrollOnTop();
+        gttScrollOnTop();
+    }
+</script>
+
+</html>

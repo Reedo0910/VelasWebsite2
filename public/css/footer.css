@@ -76,12 +76,12 @@
     color: #fff;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
-    -moz-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease;
-    transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, color 0.15s ease; }
+    -webkit-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    -moz-transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.15s ease, box-shadow 0.15s ease; }
     #footer .gototop:hover {
-      color: #2e7d32;
-      background-color: #fff;
-      -webkit-transition: background-color 0.15s ease, color 0.15s ease;
-      -moz-transition: background-color 0.15s ease, color 0.15s ease;
-      transition: background-color 0.15s ease, color 0.15s ease; }
+      background-color: #1B5E20;
+      box-shadow: #222 0 0 8px;
+      -webkit-transition: background-color 0.15s ease,box-shadow 0.15s ease;
+      -moz-transition: background-color 0.15s ease,box-shadow 0.15s ease;
+      transition: background-color 0.15s ease,box-shadow 0.15s ease; }

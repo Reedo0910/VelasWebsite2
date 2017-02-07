@@ -1,0 +1,123 @@
+ li {
+     font-size: 16px;
+ }
+ 
+ header {
+     height: 400px;
+     background: #777 url(../images/background-2.jpg) no-repeat;
+     background-size: cover;
+     background-position: 0px -167px;
+     width: 100%;
+     p {
+         color: #fff;
+         margin: 0 0 0 15%;
+         letter-spacing: 3px;
+     }
+     h1 {
+         margin: 0 11% 0;
+         text-align: center;
+         padding: 100px 16px 13px;
+         width: 15%;
+         color: #fff;
+         font-size: 2em;
+         letter-spacing: 1px;
+     }
+ }
+ 
+ #note {
+     padding-top: 20px;
+     width: 70%;
+     margin: 0 auto;
+     line-height: 26px;
+ }
+ 
+ .date {
+     width: 100%;
+     position: relative;
+     background-color: rgba(255, 255, 255, 0.95);
+     i {
+         -webkit-transition: all 0.16s ease;
+         -o-transition: all 0.16s ease;
+         transition: all 0.16s ease;
+     }
+     h3 {
+         margin: 0;
+         padding: 0 10px;
+         color: #444;
+         line-height: 40px;
+         cursor: pointer;
+     }
+ }
+ 
+ .notecard {
+     overflow: hidden;
+     margin: 17px auto;
+     h2,
+     ol {
+         float: left;
+         max-height: 9999px;
+     }
+     ol {
+         width: 77%;
+     }
+     h2 {
+         width: 15%;
+         padding-left: 25px;
+     }
+ }
+ 
+ .postscript {
+     display: inline-block;
+     max-height: 9999px;
+     .hr {
+         background: #888;
+         margin: 50px 0 40px;
+         width: 30%;
+         height: 1px;
+     }
+     p {
+         line-height: 26px;
+         color: #888;
+         span {
+             color: #444;
+         }
+     }
+ }
+ 
+ .blank {
+     height: 120px;
+ }
+ 
+ .notegroup {
+     height: 0px;
+     overflow: hidden;
+ }
+ 
+ .open .fa-caret-right {
+     -webkit-transform: rotate(90deg);
+     -ms-transform: rotate(90deg);
+     -o-transform: rotate(90deg);
+     transform: rotate(90deg);
+ }
+ 
+ .add_dash {
+     display: inline;
+     border-bottom: 1px dashed #444;
+ }
+ 
+ .insert {
+     font-size: 14px;
+     display: block;
+     line-height: 3;
+     border-right: 15px solid #ccc;
+     background-color: #444;
+     color: #fff;
+     padding-left: 15px;
+     height: 0px;
+     overflow: hidden;
+     box-sizing: border-box;
+     strong {
+         font-weight: 400;
+         color: #ff0000;
+     }
+ }

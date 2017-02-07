@@ -11,11 +11,11 @@
 <script src="./components/footer.js"></script>
 <!--endbuild-->
 <!--build:css css/index.min.css-->
-<link rel="stylesheet" href="./css/main.css">
-<link rel="stylesheet" href="./css/navbar.css">
 <link rel="stylesheet" href="./css/normalize.css">
-<link rel="stylesheet" href="./css/index.css">
 <link rel="stylesheet" href="./css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="./css/navbar.css">
 <link rel="stylesheet" href="./css/footer.css">
 <!--endbuild-->
 
@@ -39,7 +39,7 @@
     <div class="context">
         <h2 class="context-big-headtitle">Welcome to Velas</h2>
         <div class="hr"></div>
-        <p class="context-intro">我是Zeee。<br>Velas是我设计的个人博客型网站，<br>用于分享一些我私人的喜好与个人经验。<br>如果Velas能给你带来一些灵感又或是轻松愉悦的体验，<br>这将是我的荣幸。</p>
+        <p class="context-intro">我是Zeee。<br>Velas是我设计的个人博客型网站，<br>用于分享一些我私人的喜好与个人经验。<br>如果Velas能给你带来一些灵感又或是轻松愉悦的体验的话，<br>将是我的荣幸。</p>
         <div class="context-head"></div>
         <div class="card-group" id="card-group">
             <a v-for="card in cards" class="card" :href="card.href">
@@ -93,9 +93,7 @@
         navScrollOnTop();
         gttScrollOnTop();
     }
-    window.onload = function () {
-        goToTop();
-    }
+    goToTop();
 </script>
 
 </html>

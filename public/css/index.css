@@ -83,12 +83,12 @@ header {
   .context .context-big-headtitle {
     text-transform: uppercase;
     margin: 0;
-    padding-top: 30px;
+    padding-top: 40px;
     font-weight: 300;
-    font-size: 44px;
+    font-size: 40px;
     color: #444; }
   .context .context-intro {
-    color: #888;
+    color: #444;
     margin: 0 auto;
     line-height: 30px; }
   .context .hr {
