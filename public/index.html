@@ -57,6 +57,14 @@
         el: 'header',
         components: {
             'nav-titlebar': navTitle
+        },
+        created: function () {
+            window.addEventListener('scroll', function () {
+                navScrollOnTop()
+            }, false);
+        },
+        mounted: function () {
+            setActive(0);
         }
     });
 
@@ -64,6 +72,14 @@
         el: 'footer',
         components: {
             'footer-block': footer
+        },
+        created: function () {
+            window.addEventListener('scroll', function () {
+                gttScrollOnTop()
+            }, false);
+        },
+        mounted: function () {
+            goToTop();
         }
     });
 
@@ -88,12 +104,6 @@
             ]
         }
     })
-    setActive(0);
-    window.onscroll = function () {
-        navScrollOnTop();
-        gttScrollOnTop();
-    }
-    goToTop();
 </script>
 
 </html>

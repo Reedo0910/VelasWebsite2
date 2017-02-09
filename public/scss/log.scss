@@ -5,6 +5,10 @@
     transition: all $time ease-out;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 header {
     height: 400px;
     background: #777 url(../images/background-2.jpg) 0px -167px no-repeat;
