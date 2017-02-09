@@ -171,6 +171,7 @@
             bus.$on('logchange', function (y, m) {
                 dayNav.thisYear = y;
                 dayNav.thisMonth = m;
+                dayNav.activeIndex = -1;
             });
         }
     });
