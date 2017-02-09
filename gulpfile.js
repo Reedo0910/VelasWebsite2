@@ -21,7 +21,7 @@ gulp.task('clean:dist', function() {
 });
 
 gulp.task('images', function () {
-    return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    return gulp.src('public/images/**/*.+(png|jpg|jpeg|gif|svg)')
         .pipe(cache(imagemin({
             interlaced: true
         })))

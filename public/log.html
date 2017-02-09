@@ -9,6 +9,7 @@
     <script src="./js/vue.js"></script>
     <script src="./components/nav-titlebar.js"></script>
     <script src="./components/footer.js"></script>
+    <script src="./log.json.js"></script>
     <!--endbuild-->
     <!--build:css css/index.min.css-->
     <link rel="stylesheet" href="./css/normalize.css">
@@ -27,35 +28,56 @@
         <p>让每天都来点新意思</p>
     </header>
     <main>
-        <div id="note">
-            <!--日志模板  
-              <div class="notecard">
-                <h2>x月xx日</h2>
-                <ol>
-                    <li></li>
-                </ol>
+        <div class="catalog-list" id="catalog-list">
+            <ul class="main-nav">
+                <li class="panel" :class="{'expanded':yItem.isExpand,'closed':!yItem.isExpand }" v-for="yItem in logs">
+                    <a class="area" @click="expandPanel(yItem)">{{yItem.year}}年</a>
+                    <ul>
+                        <li v-for="mItem in yItem.monthLists"><a @click="setMAndY(yItem.year,mItem.month)">{{yItem.year}}年{{mItem.month}}月</a @click=setMAndY()></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="updatelog-list" id="updatelog-list">
+            <div v-for="yItem in logs" v-if="thisYear===yItem.year">
+                <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
+                    <div class="notecard" v-for="dItem in mItem.dayLists">
+                        <h2>{{mItem.month}}月{{dItem.day}}日</h2>
+                        <ol>
+                            <li v-for="item in dItem.logList">{{item}}</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
-            -->
-
             <div class="postscript">
                 <div class="hr"></div>
-                <p>网站作者Zeee将把自己的奇思妙想和新学到的前端知识投入到Velas中
+                <p>Zeee将把自己的奇思妙想和新学到的前端知识投入到Velas中。
                     <br> 每一天，在你看到或者看不到的地方，Velas都变得比昨天更成熟一些，更精致一些。
                     <br> 感谢你的到来，与Zeee一同将Velas变得更美好。
-                    <br> 没有你的支持就没有Velas的今天，Zeee在这里诚心向所有到访者致谢。
                     <br>
                     <br> *想获得本站的最佳体验，请在<span>Firefox</span>、 <span>Chrome</span>、 <span>Microsoft Edge</span>上浏览，或将你的浏览器升级至最新版本。
                 </p>
                 <div class="blank"></div>
             </div>
         </div>
+        <div class="day-list" id="day-list">
+            <ul class="sub-nav">
+                <div v-for="yItem in logs" v-if="thisYear===yItem.year">
+                    <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
+                        <li v-for="dItem in mItem.dayLists">{{mItem.month}}月{{dItem.day}}日</li>
+                    </div>
+                </div>
+            </ul>
+        </div>
     </main>
     <footer>
         <footer-block></footer-block>
     </footer>
 </body>
-<!--<script src="js/log.js"></script>-->
+<script src="js/log.js"></script>
 <script>
+    window.bus = new Vue();
+
     var navTitleBar = new Vue({
         el: 'header',
         components: {
@@ -69,11 +91,66 @@
             'footer-block': footer
         }
     });
-    setActive(2);
+
+    var catalogNav = new Vue({
+        el: '#catalog-list',
+        data: {
+            logs: logJson,
+            isExpand: false
+        },
+        methods: {
+            expandPanel: function (item) {
+                this.$nextTick(function () {　　　　　　　　
+                    this.logs.forEach(function (yItem) {
+                        yItem === item ? '' : Vue.set(yItem, 'isExpand', false);　　
+                    });　　　　　　　　
+                    item.isExpand === true ? Vue.set(item, 'isExpand', false) : Vue.set(item,
+                        'isExpand', true);　
+                });
+            },
+            setMAndY:function(y,m){
+                bus.$emit('logchange',y,m);
+            }
+        }
+    });
+
+    var logMain = new Vue({
+        el: '#updatelog-list',
+        data: {
+            logs: logJson,
+            thisYear: 2017,
+            thisMonth: 2
+        },
+        created: function () {
+            bus.$on('logchange',function(y,m){
+                logMain.thisYear=y;
+                logMain.thisMonth=m;
+            });
+        }
+    });
+
+    var dayNav = new Vue({
+        el:'#day-list',
+        data: {
+            logs: logJson,
+            thisYear: 2017,
+            thisMonth: 2
+        },
+        created:function(){
+             bus.$on('logchange',function(y,m){
+                dayNav.thisYear=y;
+                dayNav.thisMonth=m;
+            });
+        }
+    })
+
     goToTop();
-    window.onscroll = function() {
+    setActive(2);
+    window.onscroll = function () {
         navScrollOnTop();
         gttScrollOnTop();
+        autoFixed('catalog-list', 30);
+        autoFixed('day-list', 30);
     }
 </script>
 
