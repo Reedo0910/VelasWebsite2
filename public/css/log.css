@@ -100,9 +100,10 @@ main {
     main .day-list li {
       border-left: 1px solid #ccc;
       padding-left: 25px; }
-      main .day-list li:hover, main .day-list li.active {
-        color: #000;
+      main .day-list li.active, main .day-list li.active:hover {
         border-color: #000; }
+      main .day-list li:hover {
+        border-color: #666; }
   main .updatelog-list {
     padding-top: 20px;
     width: 65%;

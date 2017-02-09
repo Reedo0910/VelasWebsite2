@@ -130,10 +130,12 @@ main {
         li {
             border-left: 1px solid #ccc;
             padding-left: 25px;
-            &:hover,
-            &.active {
-                color: #000;
+            &.active,
+            &.active:hover {
                 border-color: #000;
+            }
+            &:hover {
+                border-color: #666;
             }
         }
     }
