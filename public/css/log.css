@@ -1,6 +1,14 @@
 [v-cloak] {
   display: none; }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .8s; }
+
+.fade-enter,
+.fade-leave {
+  opacity: 0; }
+
 header {
   height: 400px;
   background: #777 url(../images/background-2.jpg) 0px -167px no-repeat;
@@ -88,7 +96,13 @@ main {
         border-color: #373277; }
   main .day-list {
     position: absolute;
-    right: 100px; }
+    right: 80px; }
+    main .day-list li {
+      border-left: 1px solid #ccc;
+      padding-left: 25px; }
+      main .day-list li:hover, main .day-list li.active {
+        color: #000;
+        border-color: #000; }
   main .updatelog-list {
     padding-top: 20px;
     width: 65%;
@@ -120,8 +134,9 @@ main {
       main .updatelog-list .notecard ol {
         width: 77%; }
       main .updatelog-list .notecard h2 {
-        width: 15%;
-        padding-left: 25px; }
+        width: 115px;
+        padding-left: 25px;
+        font-weight: 500; }
     main .updatelog-list .postscript {
       display: inline-block;
       max-height: 9999px; }
@@ -137,28 +152,3 @@ main {
           color: #444; }
     main .updatelog-list .blank {
       height: 120px; }
-    main .updatelog-list .notegroup {
-      height: 0px;
-      overflow: hidden; }
-    main .updatelog-list .open .fa-caret-right {
-      -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg); }
-    main .updatelog-list .add_dash {
-      display: inline;
-      border-bottom: 1px dashed #444; }
-    main .updatelog-list .insert {
-      font-size: 14px;
-      display: block;
-      line-height: 3;
-      border-right: 15px solid #ccc;
-      background-color: #444;
-      color: #fff;
-      padding-left: 15px;
-      height: 0px;
-      overflow: hidden;
-      box-sizing: border-box; }
-      main .updatelog-list .insert strong {
-        font-weight: 400;
-        color: #ff0000; }

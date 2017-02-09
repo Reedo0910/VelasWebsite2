@@ -4,14 +4,14 @@
 <head>
     <title>Velas - 日志</title>
     <meta charset="UTF-8">
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!--build:js js/index.min.js -->
+    <!--build:js js/log.min.js -->
     <script src="./js/vue.js"></script>
     <script src="./components/nav-titlebar.js"></script>
     <script src="./components/footer.js"></script>
     <script src="./log.json.js"></script>
+    <script src="js/log.js"></script>
     <!--endbuild-->
-    <!--build:css css/index.min.css-->
+    <!--build:css css/log.min.css-->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -30,8 +30,8 @@
     <main>
         <div class="catalog-list" id="catalog-list" v-cloak>
             <ul class="main-nav">
-                <li class="panel" :class="{'expanded':yItem.isExpand,'closed':!yItem.isExpand }" v-for="yItem in logs">
-                    <a class="area" @click="expandPanel(yItem)">{{yItem.year}}年</a>
+                <li class="panel" :class="{'expanded':expandIndex===index,'closed':expandIndex!==index }" v-for="(yItem,index) in logs">
+                    <a class="area" @click="expandPanel(index)">{{yItem.year}}年</a>
                     <ul>
                         <li v-for="mItem in yItem.monthLists"><a class="catalog-list-item" @click="setMAndY(yItem.year,mItem.month)">{{yItem.year}}年{{mItem.month}}月</a></li>
                     </ul>
@@ -39,16 +39,20 @@
             </ul>
         </div>
         <div class="updatelog-list" id="updatelog-list" v-cloak>
-            <div v-for="yItem in logs" v-if="thisYear===yItem.year">
-                <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
-                    <div class="notecard" v-for="dItem in mItem.dayLists">
-                        <h2>{{mItem.month}}月{{dItem.day}}日</h2>
-                        <ol>
-                            <li v-for="item in dItem.logList">{{item}}</li>
-                        </ol>
-                    </div>
+            <transition name="fade">
+                <div v-for="yItem in logs" v-if="thisYear===yItem.year">
+                    <transition name="fade">
+                        <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
+                            <div :id="'anchor-'+index" class="notecard" v-for="(dItem,index) in mItem.dayLists">
+                                <h2>{{mItem.month}}月{{dItem.day}}日</h2>
+                                <ol>
+                                    <li v-for="item in dItem.logList">{{item}}</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </transition>
                 </div>
-            </div>
+            </transition>
             <div class="postscript">
                 <div class="hr"></div>
                 <p>Zeee将把自己的奇思妙想和新学到的前端知识投入到Velas中。
@@ -62,11 +66,15 @@
         </div>
         <div class="day-list" id="day-list" v-cloak>
             <ul class="sub-nav">
-                <div v-for="yItem in logs" v-if="thisYear===yItem.year">
-                    <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
-                        <li v-for="dItem in mItem.dayLists">{{mItem.month}}月{{dItem.day}}日</li>
+                <transition name="fade">
+                    <div v-for="yItem in logs" v-if="thisYear===yItem.year">
+                        <transition name="fade">
+                            <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
+                                <li :class="{'active':activeIndex===index}" v-for="(dItem,index) in mItem.dayLists"><a @click="goAnchor('#anchor-'+index),setDItemActive(index)">{{mItem.month}}月{{dItem.day}}日</a></li>
+                            </div>
+                        </transition>
                     </div>
-                </div>
+                </transition>
             </ul>
         </div>
     </main>
@@ -74,7 +82,9 @@
         <footer-block></footer-block>
     </footer>
 </body>
+<!--build:js js/log.min.js -->
 <script src="js/log.js"></script>
+<!--endbuild-->
 <script>
     window.bus = new Vue();
 
@@ -120,6 +130,16 @@
                 logMain.thisYear = y;
                 logMain.thisMonth = m;
             });
+        },
+        updated: function () {
+            this.$nextTick(function () {
+                changeListType();
+                let header = document.querySelector('header');
+                let view = document.documentElement.scrollTop || document.body.scrollTop;
+                if (view > header.offsetHeight - 50) {
+                    window.scrollTo(0, header.offsetHeight - 50);
+                }
+            });
         }
     });
 
@@ -128,7 +148,20 @@
         data: {
             logs: logJson,
             thisYear: 0,
-            thisMonth: 0
+            thisMonth: 0,
+            activeIndex: -1,
+        },
+        methods: {
+            goAnchor: function (selector) {
+                let anchor = document.querySelector(selector);
+                let header = document.querySelector('header');
+                scrollAnimate(anchor, anchor.offsetTop + header.offsetHeight - 40);
+            },
+            setDItemActive: function (index) {
+                this.$nextTick(function () {
+                    this.activeIndex = index;
+                });
+            },
         },
         created: function () {
             window.addEventListener('scroll', function () {
@@ -146,16 +179,12 @@
         el: '#catalog-list',
         data: {
             logs: logJson,
-            isExpand: false
+            expandIndex: 0,
         },
         methods: {
-            expandPanel: function (item) {
-                this.$nextTick(function () {　　　　　　　　
-                    this.logs.forEach(function (yItem) {
-                        yItem === item ? '' : Vue.set(yItem, 'isExpand', false);　　
-                    });　　　　　　　　
-                    item.isExpand === true ? Vue.set(item, 'isExpand', false) : Vue.set(item,
-                        'isExpand', true);　
+            expandPanel: function (index) {
+                this.$nextTick(function () {
+                    this.expandIndex = index;
                 });
             },
             setMAndY: function (y, m) {
@@ -168,7 +197,6 @@
             }, false);
         },
         mounted: function () {
-            document.querySelector('.area').click();
             document.querySelector('.catalog-list-item').click();
         },
     });

@@ -6,7 +6,7 @@ var navTitle = {
       </div>\
       <ul id="navTitle">\
       <li><a href="index.html">Home</a></li>\
-      <li><a href="peace.html">Peace</a></li>\
+      <li><a href="#">Peace</a></li>\
       <li><a href="log.html">Log</a></li>\
       <li class="nav-talk-button"><a href="http://blog.velas.xyz/">Talk</a></li>\
       </ul>\

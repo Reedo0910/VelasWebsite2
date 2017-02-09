@@ -5,10 +5,22 @@
     transition: all $time ease-out;
 }
 
+//--Vue
 [v-cloak] {
-  display: none;
+    display: none;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .8s
+}
+
+.fade-enter,
+.fade-leave {
+    opacity: 0
+}
+
+//--
 header {
     height: 400px;
     background: #777 url(../images/background-2.jpg) 0px -167px no-repeat;
@@ -100,7 +112,7 @@ main {
                     }
                 }
                 &.closed {
-                    ul{
+                    ul {
                         display: none;
                     }
                     .area:hover {
@@ -114,7 +126,16 @@ main {
     }
     .day-list {
         position: absolute;
-        right: 100px;
+        right: 80px;
+        li {
+            border-left: 1px solid #ccc;
+            padding-left: 25px;
+            &:hover,
+            &.active {
+                color: #000;
+                border-color: #000;
+            }
+        }
     }
     .updatelog-list {
         padding-top: 20px;
@@ -153,8 +174,9 @@ main {
                 width: 77%;
             }
             h2 {
-                width: 15%;
+                width: 115px;
                 padding-left: 25px;
+                font-weight: 500;
             }
         }
         .postscript {
@@ -176,36 +198,6 @@ main {
         }
         .blank {
             height: 120px;
-        }
-        .notegroup {
-            height: 0px;
-            overflow: hidden;
-        }
-        .open .fa-caret-right {
-            -webkit-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            -o-transform: rotate(90deg);
-            transform: rotate(90deg);
-        }
-        .add_dash {
-            display: inline;
-            border-bottom: 1px dashed #444;
-        }
-        .insert {
-            font-size: 14px;
-            display: block;
-            line-height: 3;
-            border-right: 15px solid #ccc;
-            background-color: #444;
-            color: #fff;
-            padding-left: 15px;
-            height: 0px;
-            overflow: hidden;
-            box-sizing: border-box;
-            strong {
-                font-weight: 400;
-                color: #ff0000;
-            }
         }
     }
 }
