@@ -53,7 +53,7 @@ function autoNavigation() {
     let index = -1;
     for (var i = 0; i < noteList.length; i++) {
         if (view >= (noteList[i].offsetTop + headerHeight - 100)) {
-            index = i
+            index = i;
         }
     }
     return index;

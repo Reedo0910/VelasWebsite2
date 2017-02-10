@@ -8,8 +8,8 @@
     <script src="./js/vue.js"></script>
     <script src="./components/nav-titlebar.js"></script>
     <script src="./components/footer.js"></script>
-    <script src="./log.json.js"></script>
-    <script src="js/log.js"></script>
+    <script src="./js/log.json.js"></script>
+    <script src="./js/log.js"></script>
     <!--endbuild-->
     <!--build:css css/log.min.css-->
     <link rel="stylesheet" href="./css/normalize.css">
@@ -32,9 +32,11 @@
             <ul class="main-nav">
                 <li class="panel" :class="{'expanded':expandIndex===index,'closed':expandIndex!==index }" v-for="(yItem,index) in logs">
                     <a class="area" @click="expandPanel(index)">{{yItem.year}}年</a>
-                    <ul>
-                        <li v-for="mItem in yItem.monthLists"><a class="catalog-list-item" @click="setMAndY(yItem.year,mItem.month)">{{yItem.year}}年{{mItem.month}}月</a></li>
-                    </ul>
+                    <transition name="fade">
+                        <ul v-show="expandIndex===index">
+                            <li v-for="mItem in yItem.monthLists"><a class="catalog-list-item" @click="setMAndY(yItem.year,mItem.month)">{{yItem.year}}年{{mItem.month}}月</a></li>
+                        </ul>
+                    </transition>
                 </li>
             </ul>
         </div>
@@ -191,7 +193,7 @@
             },
             setMAndY: function (y, m) {
                 bus.$emit('logchange', y, m);
-            }
+            },
         },
         created: function () {
             window.addEventListener('scroll', function () {

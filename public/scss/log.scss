@@ -103,18 +103,12 @@ main {
                     li {
                         border-color: #373277;
                     }
-                    ul {
-                        display: block;
-                    }
                     .area:hover {
                         background: url(../images/expand-up.svg) 100px 5px no-repeat;
                         background-size: 24px;
                     }
                 }
                 &.closed {
-                    ul {
-                        display: none;
-                    }
                     .area:hover {
                         background: url(../images/expand-down.svg) 100px 5px no-repeat;
                         background-size: 24px;

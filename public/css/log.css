@@ -83,13 +83,9 @@ main {
       main .catalog-list .main-nav .panel.expanded .area,
       main .catalog-list .main-nav .panel.expanded li {
         border-color: #373277; }
-      main .catalog-list .main-nav .panel.expanded ul {
-        display: block; }
       main .catalog-list .main-nav .panel.expanded .area:hover {
         background: url(../images/expand-up.svg) 100px 5px no-repeat;
         background-size: 24px; }
-      main .catalog-list .main-nav .panel.closed ul {
-        display: none; }
       main .catalog-list .main-nav .panel.closed .area:hover {
         background: url(../images/expand-down.svg) 100px 5px no-repeat;
         background-size: 24px;
