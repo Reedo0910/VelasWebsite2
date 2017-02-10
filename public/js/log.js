@@ -35,12 +35,26 @@ function scrollAnimate(obj, dis) {
 
 //改变项目符号
 function changeListType() {
-    var oList = document.getElementsByTagName('ol');
-    var Num = 0;
-    for (var i = 0; i < oList.length; i++) {
+    let oList = document.getElementsByTagName('ol');
+    let Num = 0;
+    for (let i = 0; i < oList.length; i++) {
         Num = oList[i].getElementsByTagName('li').length;
         if (Num == 1) {
             oList[i].style.listStyleType = 'circle';
         }
     }
+}
+
+//自动导航
+function autoNavigation() {
+    let noteList = document.querySelectorAll('.notecard');
+    let headerHeight = document.querySelector('header').offsetHeight;
+    let view = document.documentElement.scrollTop || document.body.scrollTop;
+    let index = -1;
+    for (var i = 0; i < noteList.length; i++) {
+        if (view >= (noteList[i].offsetTop + headerHeight - 100)) {
+            index = i
+        }
+    }
+    return index;
 }

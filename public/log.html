@@ -155,7 +155,7 @@
             goAnchor: function (selector) {
                 let anchor = document.querySelector(selector);
                 let header = document.querySelector('header');
-                scrollAnimate(anchor, anchor.offsetTop + header.offsetHeight - 40);
+                scrollAnimate(anchor, anchor.offsetTop + header.offsetHeight - 50);
             },
             setDItemActive: function (index) {
                 this.$nextTick(function () {
@@ -166,6 +166,7 @@
         created: function () {
             window.addEventListener('scroll', function () {
                 autoFixed('day-list', 30);
+                dayNav.activeIndex = autoNavigation();
             }, false);
 
             bus.$on('logchange', function (y, m) {
