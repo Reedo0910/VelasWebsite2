@@ -28,6 +28,14 @@ gulp.task('images', function () {
         .pipe(gulp.dest('dist/images'))
 })
 
+gulp.task('favicon', function () {
+    return gulp.src('public/favicon.ico')
+        .pipe(cache(imagemin({
+            interlaced: true
+        })))
+        .pipe(gulp.dest('dist/'))
+})
+
 gulp.task('sass', function () {
     return gulp.src('public/scss/**/*.+(sass|scss)')
         .pipe(sass())
@@ -66,7 +74,7 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 })
 
 gulp.task('build', function (callback) {
-    runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts'], callback)
+    runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts','favicon'], callback)
 })
 
 gulp.task('default', function (callback) {
