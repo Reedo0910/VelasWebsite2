@@ -4,7 +4,7 @@ var browserSync = require('browser-sync')
 var useref = require('gulp-useref')
 var uglify = require('gulp-uglify')
 var gulpIf = require('gulp-if')
-var minifyCSS = require('gulp-minify-css')
+var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin')
 var cache = require('gulp-cache')
 var del = require('del')
@@ -60,7 +60,7 @@ gulp.task('browserSync', function () {
 
 gulp.task('useref', function () {
     return gulp.src('public/*.html')
-        .pipe(gulpIf('*.css', minifyCSS()))
+        .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulpIf('*.js', uglify()))
         .pipe(useref())
         .pipe(gulp.dest('dist'))
