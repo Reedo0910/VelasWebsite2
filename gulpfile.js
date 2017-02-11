@@ -50,6 +50,11 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest('dist/fonts'))
 })
 
+gulp.task('movevue', function () {
+    return gulp.src('public/js/vue.min.js')
+        .pipe(gulp.dest('dist/js'))
+})
+
 gulp.task('browserSync', function () {
     browserSync({
         server: {
@@ -74,7 +79,7 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 })
 
 gulp.task('build', function (callback) {
-    runSequence('clean:dist', 'sass', ['useref', 'images', 'fonts','favicon'], callback)
+    runSequence('clean:dist', 'sass', ['useref', 'images', 'fonts','favicon','movevue'], callback)
 })
 
 gulp.task('default', function (callback) {
