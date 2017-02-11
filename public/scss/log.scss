@@ -59,7 +59,6 @@ main {
             padding: 0;
             box-sizing: border-box;
             cursor: pointer;
-            @include link-transition(0.5s);
             li {
                 padding: 5px 15px;
                 position: relative;
@@ -91,11 +90,19 @@ main {
                     position: relative;
                     font-weight: 500;
                 }
+                ul {
+                    margin-left: 0;
+                    padding: inherit;
+                    overflow: hidden;
+                    height: 0;
+                }
                 li {
                     border-left: 1px solid #ccc;
                     padding-left: 25px;
+                    @include link-transition(0.2s);
                     &:hover {
                         color: #000;
+                        @include link-transition(0.2s);
                     }
                 }
                 &.expanded {
@@ -122,14 +129,17 @@ main {
         position: absolute;
         right: 80px;
         li {
+            @include link-transition(0.1s);
             border-left: 1px solid #ccc;
             padding-left: 25px;
             &.active,
             &.active:hover {
                 border-color: #000;
+                @include link-transition(0.1s);
             }
             &:hover {
                 border-color: #666;
+                @include link-transition(0.1s);
             }
         }
     }

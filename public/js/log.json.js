@@ -3,9 +3,9 @@ var logJson = [{
     monthLists:[{
         month:2,
         dayLists:[{
-            day:9,
+            day:11,
             logList:[
-                '使用了Vue对Velas进行了重构'
+                '使用了Vue对Velas进行了重构(*由于重构的原因，之前的部分功能将暂时或永久失效)','使用了全新的设计风格对Velas进行了重新设计'
             ]
         }]
     }]

@@ -8,7 +8,7 @@ var footer = {
             <a href="https://github.com/Reedo0910"><li class="fa fa-github fa-lg"><p>Github</p></li></a>\
         </ul>\
         <div id="copy">\
-            <a href="#" class="fa fa-angle-up fa-2x gototop" id="gototop"></a>\
+            <a href="javaScript:void(0)" class="fa fa-angle-up fa-2x gototop" id="gototop" ></a>\
             <p>Zeee@Velas 2017</p>\
         </div>\
     </div>'
@@ -20,7 +20,7 @@ function goToTop() {
         var dd = document.documentElement,
             db = document.body,
             top = dd.scrollTop || db.scrollTop,
-            step = Math.floor(top / 20);
+            step = Math.floor(top / 15);
         (function () {
             top -= step;
             if (top > -step) {

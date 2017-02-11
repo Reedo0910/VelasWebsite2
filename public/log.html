@@ -32,11 +32,9 @@
             <ul class="main-nav">
                 <li class="panel" :class="{'expanded':expandIndex===index,'closed':expandIndex!==index }" v-for="(yItem,index) in logs">
                     <a class="area" @click="expandPanel(index)">{{yItem.year}}年</a>
-                    <transition name="fade">
-                        <ul v-show="expandIndex===index">
-                            <li v-for="mItem in yItem.monthLists"><a class="catalog-list-item" @click="setMAndY(yItem.year,mItem.month)">{{yItem.year}}年{{mItem.month}}月</a></li>
-                        </ul>
-                    </transition>
+                    <ul>
+                        <li v-for="mItem in yItem.monthLists"><a class="catalog-list-item" @click="setMAndY(yItem.year,mItem.month)">{{yItem.year}}年{{mItem.month}}月</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -183,12 +181,26 @@
         el: '#catalog-list',
         data: {
             logs: logJson,
-            expandIndex: 0,
+            expandIndex: -1,
         },
         methods: {
             expandPanel: function (index) {
                 this.$nextTick(function () {
-                    this.expandIndex = index;
+                    let panelGroup = document.querySelectorAll('.panel');
+
+                    if (this.expandIndex === index) {
+                        this.expandIndex = -1
+                        for (let i = 0; i < panelGroup.length; i++) {
+                            listAction(panelGroup[i].querySelector('ul'), 0);
+                        }
+                    } else {
+                        this.expandIndex = index;
+                        for (let i = 0; i < panelGroup.length; i++) {
+                            listAction(panelGroup[i].querySelector('ul'), 0);
+                        }
+                        listAction(panelGroup[index].querySelector(
+                            'ul'), 'auto');
+                    }
                 });
             },
             setMAndY: function (y, m) {
@@ -201,6 +213,7 @@
             }, false);
         },
         mounted: function () {
+            document.querySelector('.area').click();
             document.querySelector('.catalog-list-item').click();
         },
     });

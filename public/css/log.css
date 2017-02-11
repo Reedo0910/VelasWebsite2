@@ -44,10 +44,7 @@ main {
       list-style: none;
       padding: 0;
       box-sizing: border-box;
-      cursor: pointer;
-      -webkit-transition: all 0.5s ease-out;
-      -moz-transition: all 0.5s ease-out;
-      transition: all 0.5s ease-out; }
+      cursor: pointer; }
       main .catalog-list ul li,
       main .day-list ul li {
         padding: 5px 15px;
@@ -75,11 +72,22 @@ main {
         font-size: 16px;
         position: relative;
         font-weight: 500; }
+      main .catalog-list .main-nav .panel ul {
+        margin-left: 0;
+        padding: inherit;
+        overflow: hidden;
+        height: 0; }
       main .catalog-list .main-nav .panel li {
         border-left: 1px solid #ccc;
-        padding-left: 25px; }
+        padding-left: 25px;
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out; }
         main .catalog-list .main-nav .panel li:hover {
-          color: #000; }
+          color: #000;
+          -webkit-transition: all 0.2s ease-out;
+          -moz-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out; }
       main .catalog-list .main-nav .panel.expanded .area,
       main .catalog-list .main-nav .panel.expanded li {
         border-color: #373277; }
@@ -94,12 +102,21 @@ main {
     position: absolute;
     right: 80px; }
     main .day-list li {
+      -webkit-transition: all 0.1s ease-out;
+      -moz-transition: all 0.1s ease-out;
+      transition: all 0.1s ease-out;
       border-left: 1px solid #ccc;
       padding-left: 25px; }
       main .day-list li.active, main .day-list li.active:hover {
-        border-color: #000; }
+        border-color: #000;
+        -webkit-transition: all 0.1s ease-out;
+        -moz-transition: all 0.1s ease-out;
+        transition: all 0.1s ease-out; }
       main .day-list li:hover {
-        border-color: #666; }
+        border-color: #666;
+        -webkit-transition: all 0.1s ease-out;
+        -moz-transition: all 0.1s ease-out;
+        transition: all 0.1s ease-out; }
   main .updatelog-list {
     padding-top: 20px;
     width: 65%;
