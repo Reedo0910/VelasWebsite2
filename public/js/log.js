@@ -1,10 +1,10 @@
 // 元素固定
 function autoFixed(element, eTop) {
-    const T1 = 350;
-    const T2 = 50;
-    let top = document.documentElement.scrollTop || document.body.scrollTop;
-    let fE = document.getElementById(element);
-    let ll = document.getElementById('updatelog-list').firstChild.scrollHeight;
+    var T1 = 350;
+    var T2 = 50;
+    var top = document.documentElement.scrollTop || document.body.scrollTop;
+    var fE = document.getElementById(element);
+    var ll = document.getElementById('updatelog-list').firstChild.scrollHeight;
     if (top <= T1) {
         fE.style.position = 'absolute';
         fE.style.top = eTop + 'px';
@@ -17,8 +17,8 @@ function autoFixed(element, eTop) {
 // 定位动画
 function scrollAnimate(obj, dis) {
     clearInterval(obj.timer);
-    let view = document.documentElement.scrollTop || document.body.scrollTop;
-    let diff;
+    var view = document.documentElement.scrollTop || document.body.scrollTop;
+    var diff;
     if (view - dis != 0) {
         obj.timer = setInterval(function () {
             diff = (dis - view) / 10;
@@ -35,22 +35,22 @@ function scrollAnimate(obj, dis) {
 
 // 改变项目符号
 function changeListType() {
-    let oList = document.getElementsByTagName('ol');
-    let Num = 0;
-    for (let i = 0; i < oList.length; i++) {
+    var oList = document.getElementsByTagName('ol');
+    var Num = 0;
+    for (var i = 0; i < oList.length; i++) {
         Num = oList[i].getElementsByTagName('li').length;
         if (Num == 1) {
-            oList[i].style.listStyleType = 'circle';
+            oList[i].style.listStyvarype = 'circle';
         }
     }
 }
 
 // 自动导航
 function autoNavigation() {
-    let noteList = document.querySelectorAll('.notecard');
-    let headerHeight = document.querySelector('header').offsetHeight;
-    let view = document.documentElement.scrollTop || document.body.scrollTop;
-    let index = -1;
+    var noteList = document.querySelectorAll('.notecard');
+    var headerHeight = document.querySelector('header').offsetHeight;
+    var view = document.documentElement.scrollTop || document.body.scrollTop;
+    var index = -1;
     for (var i = 0; i < noteList.length; i++) {
         if (view >= (noteList[i].offsetTop + headerHeight - 100)) {
             index = i;

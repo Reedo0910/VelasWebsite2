@@ -38,7 +38,7 @@ gulp.task('favicon', function () {
 
 gulp.task('sass', function () {
     return gulp.src('public/scss/**/*.+(sass|scss)')
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('public/css'))
         .pipe(browserSync.reload({
             stream: true
@@ -60,9 +60,9 @@ gulp.task('browserSync', function () {
 
 gulp.task('useref', function () {
     return gulp.src('public/*.html')
-        .pipe(gulpIf('*.css', cssnano()))
-        .pipe(gulpIf('*.js', uglify()))
         .pipe(useref())
+        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulpIf('*.css', cssnano()))
         .pipe(gulp.dest('dist'))
 })
 
@@ -74,7 +74,7 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 })
 
 gulp.task('build', function (callback) {
-    runSequence('clean:dist', ['sass', 'useref', 'images', 'fonts','favicon'], callback)
+    runSequence('clean:dist', 'sass', ['useref', 'images', 'fonts','favicon'], callback)
 })
 
 gulp.task('default', function (callback) {
