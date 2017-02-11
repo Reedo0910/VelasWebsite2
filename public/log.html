@@ -5,8 +5,8 @@
     <title>Velas - 日志</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.ico">
-    <!--build:js js/log.min.js -->
     <script src="./js/vue.min.js"></script>
+    <!--build:js js/log.min.js -->
     <script src="./components/nav-titlebar.js"></script>
     <script src="./components/footer.js"></script>
     <script src="./js/log.json.js"></script>
@@ -131,12 +131,12 @@
         },
         updated: function () {
             this.$nextTick(function () {
-                changeListType();
                 let header = document.querySelector('header');
                 let view = document.documentElement.scrollTop || document.body.scrollTop;
                 if (view > header.offsetHeight - 50) {
                     window.scrollTo(0, header.offsetHeight - 50);
                 }
+                changeListType();
             });
         }
     });

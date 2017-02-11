@@ -40,7 +40,7 @@ function changeListType() {
     for (var i = 0; i < oList.length; i++) {
         Num = oList[i].getElementsByTagName('li').length;
         if (Num == 1) {
-            oList[i].style.listStyvarype = 'circle';
+            oList[i].style.listStyleType = 'circle';
         }
     }
 }
