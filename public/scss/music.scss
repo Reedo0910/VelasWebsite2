@@ -1,3 +1,58 @@
-#context{
+//背景图片
+@mixin link-background {
+    background: {
+        image: url('../images/family_hero_large.jpg');
+        repeat: no-repeat;
+        size: cover;
+        position: 0 0;
+        attachment: fixed;
+    }
+}
+
+//过渡动画样式
+@mixin link-transition($time) {
+    -webkit-transition: all $time ease-out;
+    -moz-transition: all $time ease-out;
+    transition: all $time ease-out;
+}
+
+body {
+    background-color: #444;
+    @include link-background;
+}
+
+header {
+    width: 100%;
+    min-height: 700px;
+    // background-color: rgba(255, 255, 255, 0.4);
+    #banner {
+        .inner {
+            max-width: 540px;
+            margin: 0 auto;
+            position: relative;
+            top: 200px;
+            color: #fff;
+            box-sizing: border-box;
+            text-shadow: #666 0px 1px 3px;
+            h1 {
+                line-height: 90px;
+                font-size: 40px;
+                letter-spacing: 10px;
+            }
+            h2 {
+                font-size: 30px;
+                letter-spacing: 5px;
+            }
+            h1,
+            h2 {
+                font-weight: 500;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+#context {
     height: 1000px;
+    background-color: #333;
 }
