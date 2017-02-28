@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Velas - 音乐</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="./js/vue.min.js"></script>
+    <!--build:js js/music.min.js -->
+    <script src="./components/nav-titlebar.js"></script>
+    <script src="./components/footer.js"></script>
+    <!--endbuild-->
+    <!--build:css css/music.min.css-->
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/music.css">
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <!--endbuild-->
+</head>
+
+<body>
+    <header>
+        <nav-titlebar></nav-titlebar>
+    </header>
+    <div id="context">
+
+    </div>
+    <footer>
+        <footer-block></footer-block>
+    </footer>
+</body>
+<script>
+    var navTitleBar = new Vue({
+        el: 'header',
+        components: {
+            'nav-titlebar': navTitle
+        },
+        created: function () {
+            window.addEventListener('scroll', function () {
+                navScrollOnTop()
+            }, false);
+        },
+        mounted: function () {
+            setActive(1);
+        }
+    });
+
+     var footerBlock = new Vue({
+        el: 'footer',
+        components: {
+            'footer-block': footer
+        },
+        created: function () {
+            window.addEventListener('scroll', function () {
+                gttScrollOnTop()
+            }, false);
+        },
+        mounted: function () {
+            goToTop();
+        }
+    });
+</script>
+</html>
