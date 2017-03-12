@@ -40,7 +40,7 @@
             </ul>
         </div>
         <div class="updatelog-list" id="updatelog-list" v-cloak>
-            <transition name="fade">
+            <transition name="fade" mode="out-in">
                 <div v-for="yItem in logs" v-if="thisYear===yItem.year">
                     <transition name="fade">
                         <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
@@ -67,7 +67,7 @@
         </div>
         <div class="day-list" id="day-list" v-cloak>
             <ul class="sub-nav">
-                <transition name="fade">
+                <transition name="fade" mode="out-in">
                     <div v-for="yItem in logs" v-if="thisYear===yItem.year">
                         <transition name="fade">
                             <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">

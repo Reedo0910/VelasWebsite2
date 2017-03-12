@@ -26,5 +26,9 @@
   },
   "optionalDependencies": {
     "fsevents": "*"
+  },
+  "dependencies": {
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.5.0"
   }
 }
