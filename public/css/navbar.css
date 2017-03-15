@@ -20,7 +20,11 @@ nav {
         -webkit-transition: all 0.2s ease-out;
         -moz-transition: all 0.2s ease-out;
         transition: all 0.2s ease-out; }
-      nav ul li.active a {
+      nav ul li.active a,
+      nav ul li a:active {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
         color: #fff; }
       nav ul li:not(.active) a:hover {
         -webkit-transition: all 0.2s ease-out;

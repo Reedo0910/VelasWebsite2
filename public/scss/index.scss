@@ -1,180 +1,181 @@
- //背景图片
-@mixin link-background {
-    background: {
-        image: url(../images/background.jpg);
-        repeat: no-repeat;
-        size: cover;
-        position: 0 0;
-        attachment: fixed;
-    }
-}
-
-//过渡动画样式
-@mixin link-transition($time) {
-    -webkit-transition: all $time ease-out;
-    -moz-transition: all $time ease-out;
-    transition: all $time ease-out;
-}
-
-body {
-    background-color: #444;
-    @include link-background;
-}
-
-header {
-    width: 100%;
-    min-height: 700px;
-    background-color: rgba(0, 0, 0, 0.2);
-    .header-pic-intro {
-        font-size: 10px;
-        position: absolute;
-        bottom: -15px;
-        right: 25px;
-        color: #ccc;
-        margin: 0;
-    }
-    #banner {
-        .inner {
-            max-width: 540px;
-            margin: 0 auto;
-            position: relative;
-            top: 215px;
-            color: #fff;
-            box-sizing: border-box;
-            .velas_logo {
-                width: 360px;
-                height: 105px;
-                margin: 0 auto 35px;
-                background: {
-                    image: url('../images/logo-with-text.png');
-                    size: cover;
-                }
-            }
-            .sub-heading {
-                line-height: 40px;
-                font-weight: 300;
-                margin: 0 10px;
-                text-align: center;
-                p:nth-child(1) {
-                    font-size: 18px;
-                    margin: 0;
-                }
-                p:nth-child(2) {
-                    font-size: 16px;
-                    margin-top: 5px;
-                }
-            }
-        }
-    }
-}
-
-.context {
-    width: 100%;
-    min-height: 750px;
-    background-color: #eee;
-    position: relative;
-    text-align: center;
-    box-shadow: #444 0 0 30px;
-    padding-bottom: 60px;
-    .context-big-headtitle {
-        text-transform: uppercase;
-        margin: 0;
-        padding-top: 40px;
-        font-weight: 300;
-        font-size: 40px;
-        color: #444;
-    }
-    .context-intro {
-        color: #444;
-        margin: 0 auto;
-        line-height: 30px;
-    }
-    .hr {
-        margin: 20px auto;
-        position: relative;
-    }
-    .context-head {
-        position: absolute;
-        top: -55px;
-        right: 50px;
-        width: 200px;
-        height: 200px;
-        background: {
-            image: url(../images/head.png);
-            size: cover;
-            repeat: no-repeat;
-            position: -10px 0;
-        }
-    }
-    .card-group {
-        max-width: 765px;
-        margin: 50px auto;
-        display: flex;
-        justify-content: space-around;
-        align-content: space-around;
-        flex-flow: row wrap;
-        .card {
-            height: 205px;
-            width: 205px;
-            position: relative;
-            box-shadow: 8px 6px 13px -8px #888;
-            text-align: center;
-            text-decoration: none;
-            margin-bottom: 30px;
-            color: #fff;
-            opacity: 0.85;
-            background: {
-                size: cover;
-                repeat: no-repeat;
-                position: 0 0;
-            }
-            @include link-transition(0.2s);
-            .card-title,
-            .card-intro {
-                position: relative;
-                float: left;
-                width: 100%;
-                text-align: left;
-                top: 140px;
-                padding-left: 15px;
-                box-sizing: border-box;
-            }
-            .card-title {
-                font-size: 1.4em;
-                text-shadow: #222 -1px 1px 3px;
-            }
-            .card-intro {
-                font-size: .8em;
-                text-shadow: #222 -1px 1px 3px;
-                top: 130px;
-                opacity: 0;
-                @include link-transition(0.2s);
-            }
-            &:nth-child(1) {
-                background: {
-                    image: url(../images/cardgroup/card1.jpg);
-                }
-            }
-            &:nth-child(2) {
-                background: {
-                    image: url(../images/cardgroup/card2.jpg);
-                }
-            }
-            &:nth-child(3) {
-                background: {
-                    image: url(../images/cardgroup/card4.jpg);
-                }
-            }
-            &:hover {
-                opacity: 1;
-                box-shadow: 8px 6px 25px -8px #666;
-                @include link-transition(0.2s);
-                .card-intro {
-                    opacity: 0.9;
-                    top: 140px;
-                    @include link-transition(0.2s);
-                }
-            }
-        }
-    }
-}
+//背景图片
+ @mixin link-background {
+     background: {
+         image: url(../images/background.jpg);
+         repeat: no-repeat;
+         size: cover;
+         position: 0 0;
+         attachment: fixed;
+     }
+ }
+ 
+ //过渡动画样式
+ @mixin link-transition($time) {
+     -webkit-transition: all $time ease-out;
+     -moz-transition: all $time ease-out;
+     transition: all $time ease-out;
+ }
+ 
+ body {
+     background-color: #444;
+     @include link-background;
+ }
+ 
+ header {
+     width: 100%;
+     min-height: 700px;
+     background-color: rgba(0, 0, 0, 0.2);
+     .header-pic-intro {
+         font-size: 10px;
+         position: absolute;
+         bottom: -15px;
+         right: 25px;
+         color: #ccc;
+         margin: 0;
+     }
+     #banner {
+         height: 100%;
+         .inner {
+             max-width: 540px;
+             margin: 0 auto;
+             position: relative;
+             top: 215px;
+             color: #fff;
+             box-sizing: border-box;
+             .velas_logo {
+                 width: 360px;
+                 height: 105px;
+                 margin: 0 auto 35px;
+                 background: {
+                     image: url('../images/logo-with-text.png');
+                     size: cover;
+                 }
+             }
+             .sub-heading {
+                 line-height: 40px;
+                 font-weight: 300;
+                 margin: 0 10px;
+                 text-align: center;
+                 p:nth-child(1) {
+                     font-size: 18px;
+                     margin: 0;
+                 }
+                 p:nth-child(2) {
+                     font-size: 16px;
+                     margin-top: 5px;
+                 }
+             }
+         }
+     }
+ }
+ 
+ .context {
+     width: 100%;
+     min-height: 750px;
+     background-color: #eee;
+     position: relative;
+     text-align: center;
+     box-shadow: #444 0 0 30px;
+     padding-bottom: 60px;
+     .context-big-headtitle {
+         text-transform: uppercase;
+         margin: 0;
+         padding-top: 40px;
+         font-weight: 300;
+         font-size: 40px;
+         color: #444;
+     }
+     .context-intro {
+         color: #444;
+         margin: 0 auto;
+         line-height: 30px;
+     }
+     .hr {
+         margin: 20px auto;
+         position: relative;
+     }
+     .context-head {
+         position: absolute;
+         top: -55px;
+         right: 50px;
+         width: 200px;
+         height: 200px;
+         background: {
+             image: url(../images/head.png);
+             size: cover;
+             repeat: no-repeat;
+             position: -10px 0;
+         }
+     }
+     .card-group {
+         max-width: 765px;
+         margin: 50px auto;
+         display: flex;
+         justify-content: space-around;
+         align-content: space-around;
+         flex-flow: row wrap;
+         .card {
+             height: 205px;
+             width: 205px;
+             position: relative;
+             box-shadow: 8px 6px 13px -8px #888;
+             text-align: center;
+             text-decoration: none;
+             margin-bottom: 30px;
+             color: #fff;
+             opacity: 0.85;
+             background: {
+                 size: cover;
+                 repeat: no-repeat;
+                 position: 0 0;
+             }
+             @include link-transition(0.2s);
+             .card-title,
+             .card-intro {
+                 position: relative;
+                 float: left;
+                 width: 100%;
+                 text-align: left;
+                 top: 140px;
+                 padding-left: 15px;
+                 box-sizing: border-box;
+             }
+             .card-title {
+                 font-size: 1.4em;
+                 text-shadow: #222 -1px 1px 3px;
+             }
+             .card-intro {
+                 font-size: .8em;
+                 text-shadow: #222 -1px 1px 3px;
+                 top: 130px;
+                 opacity: 0;
+                 @include link-transition(0.2s);
+             }
+             &:nth-child(1) {
+                 background: {
+                     image: url(../images/cardgroup/card1.jpg);
+                 }
+             }
+             &:nth-child(2) {
+                 background: {
+                     image: url(../images/cardgroup/card2.jpg);
+                 }
+             }
+             &:nth-child(3) {
+                 background: {
+                     image: url(../images/cardgroup/card4.jpg);
+                 }
+             }
+             &:hover {
+                 opacity: 1;
+                 box-shadow: 8px 6px 25px -8px #666;
+                 @include link-transition(0.2s);
+                 .card-intro {
+                     opacity: 0.9;
+                     top: 140px;
+                     @include link-transition(0.2s);
+                 }
+             }
+         }
+     }
+ }

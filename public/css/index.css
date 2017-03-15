@@ -17,30 +17,32 @@ header {
     right: 25px;
     color: #ccc;
     margin: 0; }
-  header #banner .inner {
-    max-width: 540px;
-    margin: 0 auto;
-    position: relative;
-    top: 215px;
-    color: #fff;
-    box-sizing: border-box; }
-    header #banner .inner .velas_logo {
-      width: 360px;
-      height: 105px;
-      margin: 0 auto 35px;
-      background-image: url("../images/logo-with-text.png");
-      background-size: cover; }
-    header #banner .inner .sub-heading {
-      line-height: 40px;
-      font-weight: 300;
-      margin: 0 10px;
-      text-align: center; }
-      header #banner .inner .sub-heading p:nth-child(1) {
-        font-size: 18px;
-        margin: 0; }
-      header #banner .inner .sub-heading p:nth-child(2) {
-        font-size: 16px;
-        margin-top: 5px; }
+  header #banner {
+    height: 100%; }
+    header #banner .inner {
+      max-width: 540px;
+      margin: 0 auto;
+      position: relative;
+      top: 215px;
+      color: #fff;
+      box-sizing: border-box; }
+      header #banner .inner .velas_logo {
+        width: 360px;
+        height: 105px;
+        margin: 0 auto 35px;
+        background-image: url("../images/logo-with-text.png");
+        background-size: cover; }
+      header #banner .inner .sub-heading {
+        line-height: 40px;
+        font-weight: 300;
+        margin: 0 10px;
+        text-align: center; }
+        header #banner .inner .sub-heading p:nth-child(1) {
+          font-size: 18px;
+          margin: 0; }
+        header #banner .inner .sub-heading p:nth-child(2) {
+          font-size: 16px;
+          margin-top: 5px; }
 
 .context {
   width: 100%;
