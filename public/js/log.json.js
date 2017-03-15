@@ -1,6 +1,14 @@
 var logJson = [{
     year: 2017,
     monthLists:[{
+        month:3,
+        dayLists:[{
+            day:15,
+            logList:[
+                '对导航栏样式与功能进行了扩展','优化了导航栏模块化设计的代码','修复了Log页切换月份时的渲染问题','对首页的banner的设计进行了调整'
+            ]
+        }]
+        },{
         month:2,
         dayLists:[{
             day:11,

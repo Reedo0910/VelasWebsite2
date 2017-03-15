@@ -12,9 +12,9 @@ var navTitle = {
       <li class="nav-talk-button" id="talk_nav"><a href="http://blog.velas.xyz/">Talk</a></li>\
       </ul>\
       <ul class="sub-navbar" id="subNavbar-Collection">\
-        <li><a href="music.html">Music</a></li>\
-        <li><a href="tasty.html">Tasty</a></li>\
-        <li><a href="movie.html">Movie</a></li>\
+        <li><a href="music.html"><i class="fa fa-music" aria-hidden="true"></i> Music</a></li>\
+        <li><a href="tasty.html"><i class="fa fa-cutlery" aria-hidden="true"></i> Tasty</a></li>\
+        <li><a href="movie.html"><i class="fa fa-film" aria-hidden="true"></i> Movie</a></li>\
       </ul>\
     </nav>'
 }
