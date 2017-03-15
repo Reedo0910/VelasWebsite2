@@ -5,6 +5,7 @@ nav {
   padding-top: 20px;
   position: fixed;
   z-index: 1000;
+  overflow: hidden;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out; }
@@ -41,6 +42,13 @@ nav {
           -webkit-transition: all 0.2s ease-out;
           -moz-transition: all 0.2s ease-out;
           transition: all 0.2s ease-out; }
+    nav ul #collection_nav a {
+      cursor: pointer; }
+  nav ul.sub-navbar {
+    position: relative;
+    top: 15px;
+    clear: both;
+    padding-right: 85px; }
   nav #logo {
     float: left;
     font-size: 20px;

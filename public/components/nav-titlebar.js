@@ -1,23 +1,41 @@
 var navTitle = {
     template: '\
-    <nav id="nav">\
+    <nav id="nav" onload="itemExpand(1)">\
       <div id="logo">\
       <a href="index.html">Velas</a>\
       </div>\
       <ul id="navTitle">\
-      <li><a href="index.html">Home</a></li>\
-      <li><a href="#">Peace</a></li>\
-      <li><a href="log.html">Log</a></li>\
-      <li class="nav-talk-button"><a href="http://blog.velas.xyz/">Talk</a></li>\
+      <li id="home_nav"><a href="index.html">Home</a></li>\
+      <li id="collection_nav" onclick="itemExpand(this,0)"><a>Collection</a>\
+      </li>\
+      <li id="log_nav"><a href="log.html">Log</a></li>\
+      <li class="nav-talk-button" id="talk_nav"><a href="http://blog.velas.xyz/">Talk</a></li>\
       </ul>\
-      </nav>'
+      <ul class="sub-navbar" id="subNavbar-Collection">\
+        <li><a href="music.html">Music</a></li>\
+        <li><a href="tasty.html">Tasty</a></li>\
+        <li><a href="movie.html">Movie</a></li>\
+      </ul>\
+    </nav>'
 }
+
+var NT = {
+    bgc: 'rgba(255, 255, 255, 0)',
+    h: 50,
+    type: '',
+    index: -1
+};
 
 function setActive(index) {
     var liList = document.getElementById('navTitle').getElementsByTagName('li');
     if (index < liList.length - 1) {
         liList[index].className = 'active';
     }
+}
+
+function setType(type) {
+    type == '' ? type = 'default' : '';
+    NT.type = type;
 }
 
 function navScrollOnTop() {
@@ -27,10 +45,38 @@ function navScrollOnTop() {
         navBar.style.backgroundColor = 'rgba(255, 255, 255, 0)';
         navBar.style.boxShadow = 'none';
         navBar.style.paddingTop = '20px';
+        navBar.style.height = '50px';
+    } else if (top > 50 && top <= 650) {
+        if (NT.type == 'light') {
+            navBar.style.backgroundColor = 'rgba(200, 200, 200, 0.4)';
+        } else if (NT.type == 'dark') {
+            navBar.style.backgroundColor = 'rgba(66, 66, 66, 0.4)';
+        } else {
+            navBar.style.backgroundColor = 'rgba(150, 150, 150, 0.5)';
+        }
+        navBar.style.boxShadow = '#444 0 0 10px';
+        navBar.style.paddingTop = '12px';
+        navBar.style.height = '40px';
     } else {
-        navBar.style.backgroundColor = 'rgba(92, 107, 192, 0.85)';
+        navBar.style.backgroundColor = 'rgba(150, 150, 150, 0.5)';
         navBar.style.boxShadow = '#444 0 0 10px';
         navBar.style.paddingTop = '12px';
         navBar.style.height = '40px';
     }
+    NT.bgc = navBar.style.backgroundColor;
+    NT.h = parseInt(navBar.style.height.replace(/[^0-9]/g, ''));
+}
+
+function itemExpand(tarObj, subMenuNum) {
+    var item = tarObj;
+    var navBar = document.getElementById('nav');
+    var subNavBar = document.getElementsByClassName('sub-navbar')[subMenuNum];
+    navBar.style.height = NT.h + 50 + 'px';
+    NT.type == 'dark' ? navBar.style.backgroundColor = 'rgba(100, 100, 100, 0.85)' : navBar.style.backgroundColor = 'rgba(230, 230, 230, 0.85)';
+    item.className = 'active';
+    subNavBar.addEventListener('mouseleave', function () {
+        navBar.style.height = NT.h + 'px';
+        navBar.style.backgroundColor = NT.bgc;
+        item.className = '';
+    }, false);
 }

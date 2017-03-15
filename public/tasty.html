@@ -44,10 +44,11 @@
         },
         mounted: function () {
             setActive(1);
+            setType('light');
         }
     });
 
-     var footerBlock = new Vue({
+    var footerBlock = new Vue({
         el: 'footer',
         components: {
             'footer-block': footer
@@ -62,4 +63,5 @@
         }
     });
 </script>
+
 </html>

@@ -25,17 +25,16 @@
         <nav-titlebar></nav-titlebar>
         <div id="banner">
             <div class="inner">
-                <h1>VELAS</h1>
-                <p class="sub-heading">
-                    能共你一起
-                    <br><strong>春观夜樱、夏望繁星、
-                    <br>秋赏满月、冬会初雪。</strong>
-                    <br>这就是我感到幸福的理由。</p>
+                <div class="velas_logo"></div>
+                <div class="sub-heading">
+                    <p><strong>“春观夜樱、夏望繁星、秋赏满月、冬会初雪。”</strong></p>
+                    <p>春は夜桜 夏には星 秋に満月 冬には雪。</p>
+                </div>
                 <div class="hr"></div>
                 <div class="decorate-box"></div>
             </div>
         </div>
-        <p class="header-pic-intro">关于图片：加拿大班夫国家公园 Banff National Park</p>
+        <p class="header-pic-intro">关于图片：中国西藏-尼泊尔 喜玛拉雅山脉 Tibet-Nepal Himalayas</p>
     </header>
     <div class="context">
         <h2 class="context-big-headtitle">Welcome to Velas</h2>
@@ -61,12 +60,13 @@
         },
         created: function () {
             window.addEventListener('scroll', function () {
-                navScrollOnTop()
+                navScrollOnTop();
             }, false);
         },
         mounted: function () {
             setActive(0);
-        }
+            setType('dark');
+        },
     });
 
     var footerBlock = new Vue({

@@ -42,7 +42,7 @@
         <div class="updatelog-list" id="updatelog-list" v-cloak>
             <transition name="fade" mode="out-in">
                 <div v-for="yItem in logs" v-if="thisYear===yItem.year">
-                    <transition name="fade">
+                    <transition name="fade" mode="out-in">
                         <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
                             <div :id="'anchor-'+index" class="notecard" v-for="(dItem,index) in mItem.dayLists">
                                 <h2>{{mItem.month}}月{{dItem.day}}日</h2>
@@ -69,7 +69,7 @@
             <ul class="sub-nav">
                 <transition name="fade" mode="out-in">
                     <div v-for="yItem in logs" v-if="thisYear===yItem.year">
-                        <transition name="fade">
+                        <transition name="fade" mode="out-in">
                             <div v-for="mItem in yItem.monthLists" v-if="thisMonth===mItem.month">
                                 <li :class="{'active':activeIndex===index}" v-for="(dItem,index) in mItem.dayLists"><a @click="goAnchor('#anchor-'+index),setDItemActive(index)">{{mItem.month}}月{{dItem.day}}日</a></li>
                             </div>
@@ -98,6 +98,7 @@
         },
         mounted: function () {
             setActive(2);
+            setType('default');
         }
     });
 

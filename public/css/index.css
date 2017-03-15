@@ -1,9 +1,3 @@
-.hr {
-  margin: 0px;
-  width: 100px;
-  background-color: #000;
-  height: 2px; }
-
 body {
   background-color: #444;
   background-image: url(../images/background.jpg);
@@ -15,62 +9,38 @@ body {
 header {
   width: 100%;
   min-height: 700px;
-  background-color: rgba(255, 255, 255, 0.4); }
+  background-color: rgba(0, 0, 0, 0.2); }
   header .header-pic-intro {
     font-size: 10px;
     position: absolute;
-    bottom: -10px;
+    bottom: -15px;
     right: 25px;
-    color: #444;
+    color: #ccc;
     margin: 0; }
   header #banner .inner {
     max-width: 540px;
     margin: 0 auto;
     position: relative;
-    top: 150px;
-    color: #000;
-    box-sizing: border-box;
-    text-shadow: #666 0px 1px 3px; }
-    header #banner .inner h1 {
-      line-height: 90px;
-      letter-spacing: 5px;
-      text-align: right;
-      font-size: 40px;
-      font-weight: 500; }
-    header #banner .inner a {
-      color: #fff;
-      text-decoration: none; }
+    top: 215px;
+    color: #fff;
+    box-sizing: border-box; }
+    header #banner .inner .velas_logo {
+      width: 360px;
+      height: 105px;
+      margin: 0 auto 35px;
+      background-image: url("../images/logo-with-text.png");
+      background-size: cover; }
     header #banner .inner .sub-heading {
       line-height: 40px;
-      top: 56px;
-      font-size: 18px;
-      font-weight: 400; }
-    header #banner .inner h1,
-    header #banner .inner .sub-heading {
-      position: relative;
-      display: inline-block;
-      margin: 0 40px;
-      z-index: 200; }
-    header #banner .inner .hr {
-      box-shadow: #222 -1px 1px 10px 0px;
-      left: 78px;
-      position: relative;
-      z-index: 200; }
-    header #banner .inner .decorate-box {
-      width: 265px;
-      height: 265px;
-      float: left;
-      position: relative;
-      z-index: 10;
-      top: -110px;
-      right: 110px;
-      box-shadow: #222 -2px 3px 19px 0px;
-      background-image: url(../images/background.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 0 0;
-      background-attachment: fixed;
-      opacity: 0.9; }
+      font-weight: 300;
+      margin: 0 10px;
+      text-align: center; }
+      header #banner .inner .sub-heading p:nth-child(1) {
+        font-size: 18px;
+        margin: 0; }
+      header #banner .inner .sub-heading p:nth-child(2) {
+        font-size: 16px;
+        margin-top: 5px; }
 
 .context {
   width: 100%;
