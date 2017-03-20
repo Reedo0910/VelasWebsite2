@@ -30,5 +30,56 @@ header {
       margin: 0 auto; }
 
 #context {
-  height: 1000px;
-  background-color: #333; }
+  background-color: rgba(90, 90, 90, 0.95);
+  padding: 20px 10px; }
+  #context .music_card_group {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+    #context .music_card_group .music_card {
+      flex-shrink: 0;
+      background-color: #444;
+      color: #fff;
+      width: 650px;
+      padding: 20px 20px 30px;
+      margin: 60px 100px;
+      position: relative;
+      box-shadow: #000 0 0 10px; }
+      #context .music_card_group .music_card .card_album {
+        position: absolute;
+        left: -100px;
+        top: 30px;
+        width: 300px;
+        box-shadow: #000 0 0 30px; }
+      #context .music_card_group .music_card .card_info {
+        position: relative;
+        display: inline-block;
+        width: 375px;
+        left: 245px; }
+        #context .music_card_group .music_card .card_info .card_title {
+          font-size: 1.6em; }
+        #context .music_card_group .music_card .card_info .card_intro {
+          line-height: 1.5em; }
+          #context .music_card_group .music_card .card_info .card_intro span {
+            display: block; }
+      #context .music_card_group .music_card .card_bg_content {
+        width: 100%;
+        height: 10px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+        #context .music_card_group .music_card .card_bg_content .bg_content_cover {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          z-index: 1;
+          left: 0; }
+        #context .music_card_group .music_card .card_bg_content .bg_content_blur {
+          background-size: cover;
+          filter: blur(10px);
+          width: 100%;
+          height: 100%;
+          position: relative;
+          z-index: 0; }

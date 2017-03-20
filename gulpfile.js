@@ -10,14 +10,14 @@ var cache = require('gulp-cache')
 var del = require('del')
 var runSequence = require('run-sequence')
 
-gulp.task('clean', function() {
-  return del.sync('dist').then(function(cb) {
-    return cache.clearAll(cb);
-  });
+gulp.task('clean', function () {
+    return del.sync('dist').then(function (cb) {
+        return cache.clearAll(cb);
+    });
 })
 
-gulp.task('clean:dist', function() {
-  return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
+gulp.task('clean:dist', function () {
+    return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
 });
 
 gulp.task('images', function () {
@@ -55,6 +55,11 @@ gulp.task('movevue', function () {
         .pipe(gulp.dest('dist/js'))
 })
 
+gulp.task('movefiles', function () {
+    return gulp.src('public/log.json.js')
+        .pipe(gulp.dest('dist'))
+})
+
 gulp.task('browserSync', function () {
     browserSync({
         server: {
@@ -79,7 +84,7 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 })
 
 gulp.task('build', function (callback) {
-    runSequence('clean:dist', 'sass', ['useref', 'images', 'fonts','favicon','movevue'], callback)
+    runSequence('clean:dist', 'sass', ['useref', 'images', 'fonts', 'favicon', 'movevue', 'movefiles'], callback)
 })
 
 gulp.task('default', function (callback) {

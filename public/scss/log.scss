@@ -6,10 +6,6 @@
 }
 
 //--Vue
-[v-cloak] {
-    display: none;
-}
-
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity .8s
@@ -150,6 +146,9 @@ main {
         line-height: 26px;
         li {
             font-size: 16px;
+            &.singleList {
+                list-style-type: circle;
+            }
         }
         .date {
             width: 100%;

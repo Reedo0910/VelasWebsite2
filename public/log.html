@@ -5,18 +5,22 @@
     <title>Velas - 日志</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.ico">
+    <script src="./log.json.js"></script>
     <script src="./js/vue.min.js"></script>
     <!--build:js js/log.min.js -->
-    <script src="./components/nav-titlebar.js"></script>
-    <script src="./components/footer.js"></script>
-    <script src="./js/log.json.js"></script>
     <script src="./js/log.js"></script>
     <!--endbuild-->
+    <!--build:js js/frame.min.js -->
+    <script src="./components/nav-titlebar.js"></script>
+    <script src="./components/footer.js"></script>
+    <!--endbuild-->
     <!--build:css css/log.min.css-->
+    <link rel="stylesheet" href="./css/log.css">
+    <!--endbuild-->
+    <!--build:css css/frame.min.css-->
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/log.css">
     <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="./css/footer.css">
     <!--endbuild-->
@@ -47,7 +51,7 @@
                             <div :id="'anchor-'+index" class="notecard" v-for="(dItem,index) in mItem.dayLists">
                                 <h2>{{mItem.month}}月{{dItem.day}}日</h2>
                                 <ol>
-                                    <li v-for="item in dItem.logList">{{item}}</li>
+                                    <li v-for="item in dItem.logList" :class="{'singleList':dItem.logList.length==1}">{{item}}</li>
                                 </ol>
                             </div>
                         </div>
@@ -137,7 +141,6 @@
                 if (view > header.offsetHeight - 50) {
                     window.scrollTo(0, header.offsetHeight - 50);
                 }
-                changeListType();
             });
         }
     });

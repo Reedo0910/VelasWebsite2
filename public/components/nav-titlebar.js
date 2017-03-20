@@ -6,7 +6,7 @@ var navTitle = {
       </div>\
       <ul id="navTitle">\
       <li id="home_nav"><a href="index.html">Home</a></li>\
-      <li id="collection_nav" onclick="itemExpand(0)"><a>Collections <i class="fa fa-angle-down fa-lg"></i></a>\
+      <li id="collection_nav" onclick="itemExpand(0)"><a>Collections <i class="fa fa-angle-down fa-lg rotate" id="rotate"></i></a>\
       </li>\
       <li id="log_nav"><a href="log.html">Log</a></li>\
       <li class="nav-talk-button" id="talk_nav"><a href="http://blog.velas.xyz/">Talk</a></li>\
@@ -23,7 +23,8 @@ var NT = {
     bgc: 'rgba(255, 255, 255, 0)',
     h: 50,
     type: '',
-    index: -1
+    index: -1,
+    isTabOpen: false
 };
 
 function setActive(index) {
@@ -63,6 +64,10 @@ function navScrollOnTop() {
         navBar.style.paddingTop = '12px';
         navBar.style.height = '40px';
     }
+    if (NT.isTabOpen) {
+        document.getElementById('rotate').style.transform = 'rotate(0)';
+        NT.isTabOpen = false;
+    }
     NT.bgc = navBar.style.backgroundColor;
     NT.h = parseInt(navBar.style.height.replace(/[^0-9]/g, ''));
 }
@@ -70,10 +75,17 @@ function navScrollOnTop() {
 function itemExpand(subMenuNum) {
     var navBar = document.getElementById('nav');
     var subNavBar = document.getElementsByClassName('sub-navbar')[subMenuNum];
+    var downIcon = document.getElementById('rotate');
     navBar.style.height = NT.h + 50 + 'px';
     NT.type == 'dark' ? navBar.style.backgroundColor = 'rgba(100, 100, 100, 0.85)' : navBar.style.backgroundColor = 'rgba(230, 230, 230, 0.85)';
+    downIcon.style.transform = 'rotate(180deg)';
+    NT.isTabOpen = true;
     subNavBar.addEventListener('mouseleave', function () {
         navBar.style.height = NT.h + 'px';
         navBar.style.backgroundColor = NT.bgc;
+        if (NT.isTabOpen) {
+            downIcon.style.transform = 'rotate(0)';
+            NT.isTabOpen = false;
+        }
     }, false);
 }

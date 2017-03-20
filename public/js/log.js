@@ -33,18 +33,6 @@ function scrollAnimate(obj, dis) {
     }
 }
 
-// 改变项目符号
-function changeListType() {
-    var oList = document.getElementsByTagName('ol');
-    var Num = 0;
-    for (var i = 0; i < oList.length; i++) {
-        Num = oList[i].getElementsByTagName('li').length;
-        if (Num == 1) {
-            oList[i].style.listStyleType = 'circle';
-        }
-    }
-}
-
 // 自动导航
 function autoNavigation() {
     var noteList = document.querySelectorAll('.notecard');

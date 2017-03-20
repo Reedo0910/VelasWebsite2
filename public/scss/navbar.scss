@@ -1,82 +1,85 @@
- //p的字体大小
-$font-size-p:16px;
-//过渡动画样式
-@mixin link-transition($time) {
-    -webkit-transition: all $time ease-out;
-    -moz-transition: all $time ease-out;
-    transition: all $time ease-out;
-}
-
-nav {
-    height: 50px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0);
-    padding-top: 20px;
-    position: fixed;
-    z-index: 1000;
-    overflow: hidden;
-    @include link-transition(0.3s);
-    ul {
-        list-style: none;
-        padding-right: 25px;
-        float: right;
-        li {
-            display: inline-block;
-            a {
-                color: #ccc;
-                @include link-transition(0.2s);
-            }
-            &.active a,
-            a:active {
-                @include link-transition(0.2s);
-                color: #fff;
-            }
-            &:not(.active) a:hover {
-                @include link-transition(0.2s);
-                color: #fff;
-            }
-            &.nav-talk-button {
-                border-radius: 30px;
-                background-color: #0b00dc;
-                box-shadow: #222 -1px 1px 7px 0px;
-                @include link-transition(0.2s);
-                a {
-                    color: #fff;
-                }
-                &:hover {
-                    background-color: #0900b3;
-                    box-shadow: #222 -1px 1px 10px 0px;
-                    @include link-transition(0.2s);
-                }
-            }
-        }
-        #collection_nav a {
-            cursor: pointer;
-        }
-    }
-    ul.sub-navbar {
-        position: relative;
-        top: 15px;
-        clear: both;
-        padding-right: 88px;
-    }
-    #logo {
-        float: left;
-        font-size: 20px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-left: 25px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        a {
-            color: #fff;
-        }
-    }
-    #logo a,
-    ul li a {
-        line-height: 30px;
-        text-decoration: none;
-        display: inline-block;
-        padding: 0 20px;
-        text-shadow: #222 -1px 1px 3px;
-    }
-}
+//p的字体大小
+ $font-size-p:16px;
+ //过渡动画样式
+ @mixin link-transition($time) {
+     -webkit-transition: all $time ease-out;
+     -moz-transition: all $time ease-out;
+     transition: all $time ease-out;
+ }
+ 
+ nav {
+     height: 50px;
+     width: 100%;
+     background-color: rgba(255, 255, 255, 0);
+     padding-top: 20px;
+     position: fixed;
+     z-index: 1000;
+     overflow: hidden;
+     @include link-transition(0.3s);
+     ul {
+         list-style: none;
+         padding-right: 25px;
+         float: right;
+         li {
+             display: inline-block;
+             i.rotate {
+                 @include link-transition(0.3s);
+             }
+             a {
+                 color: #ccc;
+                 @include link-transition(0.2s);
+             }
+             &.active a,
+             a:active {
+                 @include link-transition(0.2s);
+                 color: #fff;
+             }
+             &:not(.active) a:hover {
+                 @include link-transition(0.2s);
+                 color: #fff;
+             }
+             &.nav-talk-button {
+                 border-radius: 30px;
+                 background-color: #0b00dc;
+                 box-shadow: #222 -1px 1px 7px 0px;
+                 @include link-transition(0.2s);
+                 a {
+                     color: #fff;
+                 }
+                 &:hover {
+                     background-color: #0900b3;
+                     box-shadow: #222 -1px 1px 10px 0px;
+                     @include link-transition(0.2s);
+                 }
+             }
+         }
+         #collection_nav a {
+             cursor: pointer;
+         }
+     }
+     ul.sub-navbar {
+         position: relative;
+         top: 15px;
+         clear: both;
+         padding-right: 88px;
+     }
+     #logo {
+         float: left;
+         font-size: 20px;
+         font-weight: 700;
+         letter-spacing: 1px;
+         margin-left: 25px;
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         a {
+             color: #fff;
+         }
+     }
+     #logo a,
+     ul li a {
+         line-height: 30px;
+         text-decoration: none;
+         display: inline-block;
+         padding: 0 20px;
+         text-shadow: #222 -1px 1px 3px;
+     }
+ }

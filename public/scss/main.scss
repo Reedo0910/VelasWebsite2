@@ -31,3 +31,7 @@
      font-size: $font-size-p;
      letter-spacing: 1px;
  }
+
+ [v-cloak] {
+  display: none;
+}
