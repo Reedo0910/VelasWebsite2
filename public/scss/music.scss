@@ -53,9 +53,11 @@ header {
 
 #context {
     background-color: rgba(90, 90, 90, 0.95);
+    box-shadow: #000 0 0 30px;
     .artist_list {
         background-repeat: no-repeat;
         background-size: cover;
+        background-attachment: fixed;
         .music_card_group {
             width: 100%;
             height: 100%;
