@@ -6,6 +6,9 @@
     <title>Velas - 音乐</title>
     <link rel="shortcut icon" href="favicon.ico">
     <script src="./js/vue.js"></script>
+    <!--build:js js/music.min.js -->
+    <script src="./js/music.json.js"></script>
+    <!--endbuild-->
     <!--build:js js/frame.min.js -->
     <script src="./components/nav-titlebar.js"></script>
     <script src="./components/footer.js"></script>
@@ -32,18 +35,21 @@
             </div>
         </div>
     </header>
-    <div id="context">
-        <div class="music_card_group" id="music_card_group" v-cloak>
-            <div class="music_card" v-for="card in MusicCards">
-                <img class="card_album" :src="card.albumPic" :alt="card.albumName">
-                <div class="card_bg_content">
-                    <div class="bg_content_cover" :style="{background: card.themeColor}"></div>
-                    <div class="bg_content_blur" :style="{background: 'url(' + card.albumPic + ')'}"></div>
-                </div>
-                <div class="card_info">
-                    <h3 class="card_title">{{card.songTitle}}</h3>
-                    <h4 class="card_album_name_artist"><span>{{card.albumName}}</span> —— <span>{{card.artistName}}</span></h4>
-                    <p class="card_intro" v-html="card.albumIntro"></p>
+    <div id="context" v-cloak>
+        <div class="artist_list" v-for="artist in MusicCards" :style="{'background-image': 'url(' + artist.ArtistPic + ')'}">
+            <div class="music_card_group" :style="{'background-color': artist.BackgroundColor}">
+                <h2 class="artist_name">{{artist.Artist}}</h2>
+                <div class="music_card" v-for="card in artist.Albums">
+                    <img class="card_album" :src="card.albumPic" :alt="card.albumName">
+                    <div class="card_bg_content">
+                        <div class="bg_content_cover" :style="{'background-color': card.themeColor}"></div>
+                        <div class="bg_content_blur" :style="{'background-image': 'url(' + card.albumPic + ')'}"></div>
+                    </div>
+                    <div class="card_info">
+                        <h3 class="card_title">{{card.songTitle}}</h3>
+                        <h4 class="card_album_name_artist"><span>{{card.albumName}}</span> —— <span>{{card.albumYear}}</span></h4>
+                        <p class="card_intro" v-html="card.albumIntro"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -70,16 +76,9 @@
     });
 
     var musicCard = new Vue({
-        el: '#music_card_group',
+        el: '#context',
         data: {
-            MusicCards: [{
-                albumPic: './images/album/riot.jpg',
-                albumName: 'Riot!',
-                songTitle: 'Misery Business',
-                artistName: 'Paramore',
-                themeColor: 'rgba(233, 88, 64, 0.5)',
-                albumIntro: '<span>“一出道便注定是巅峰”，<em>Riot!</em>对Paramore来说便是这样的一张专辑。</span><span>如封面那些躁动的Riot一样，整张专辑都充斥着青春的不安分与癫狂。与此同时，歌曲的完成度和主唱Hayley对朋克风格的驾驭程度之高都让人吃惊，将一单<em>All We Know Is Falling</em>时的青涩一洗而空，其中的不少曲目也成了Paramore的代表作。</span>'
-            }]
+            MusicCards: musicData
         }
     })
 
