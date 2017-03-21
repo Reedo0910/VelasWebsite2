@@ -25,6 +25,12 @@
 <body>
     <header>
         <nav-titlebar></nav-titlebar>
+        <div id="banner">
+            <div class="inner">
+                <h1>TASTY</h1>
+            </div>
+            <i class="fa fa-angle-double-down fa-2x down_icon" aria-hidden="true"></i>
+        </div>
     </header>
     <div id="context">
 
@@ -46,6 +52,7 @@
         },
         mounted: function () {
             setActive(1);
+            setSubTitleActive(1);
             setType('light');
         }
     });

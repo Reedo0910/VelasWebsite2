@@ -16,9 +16,8 @@ header {
     min-height: 700px;
     #banner {
         .inner {
-            max-width: 540px;
-            margin: 0 auto;
             position: relative;
+            text-align: center;
             top: 270px;
             color: #fff;
             box-sizing: border-box;
@@ -31,6 +30,13 @@ header {
                 font-weight: 300;
                 margin: 0 auto;
             }
+        }
+        .down_icon {
+            color: #fff;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            text-shadow: #4a148c 0px 1px 30px;
         }
     }
 }
@@ -70,17 +76,31 @@ header {
                 border-radius: 10px;
                 .card_album {
                     position: absolute;
-                    z-index: 5;
+                    z-index: 6;
                     left: -100px;
                     top: 30px;
                     width: 300px;
                     box-shadow: #000 0 0 30px;
+                }
+                .card_bg_cover {
+                    &.above_layer {
+                        background: linear-gradient(to bottom, rgba(100, 100, 100, 0.4), rgba(100, 100, 100, 0));
+                        z-index: 3;
+                    }
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 2;
+                    border-radius: 10px 10px 0 0;
                 }
                 .card_info {
                     position: relative;
                     display: inline-block;
                     width: 375px;
                     left: 245px;
+                    z-index: 5;
                     .card_title {
                         font-size: 1.6em;
                     }
@@ -91,15 +111,16 @@ header {
                         }
                     }
                 }
-                .card_bg_content {
+                .card_bt_content {
                     width: 100%;
-                    height: 15px;
+                    height: 100%;
                     overflow: hidden;
                     position: absolute;
-                    bottom: 0;
+                    top: 0;
                     left: 0;
-                    border-radius: 0 0 30px 30px;
-                    .bg_content_cover {
+                    border-radius: 10px;
+                    z-index: 1;
+                    .bt_content_cover {
                         width: 100%;
                         height: 100%;
                         position: absolute;
@@ -107,7 +128,7 @@ header {
                         z-index: 1;
                         left: 0;
                     }
-                    .bg_content_blur {
+                    .bt_content_blur {
                         background-size: cover;
                         filter: blur(8px);
                         width: 100%;

@@ -1,2 +1,31 @@
+@font-face {
+  font-family: "Qwigley Regular";
+  src: url("../fonts/Qwigley-Regular.ttf"); }
+
+header {
+  background-color: #e53935;
+  width: 100%;
+  min-height: 700px; }
+  header #banner .inner {
+    position: relative;
+    text-align: center;
+    top: 270px;
+    color: #fff;
+    box-sizing: border-box;
+    text-shadow: #b71c1c 0px 1px 30px; }
+    header #banner .inner h1 {
+      font-family: Qwigley Regular;
+      line-height: 90px;
+      font-size: 15em;
+      letter-spacing: 10px;
+      font-weight: 300;
+      margin: 0 auto; }
+  header #banner .down_icon {
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    text-shadow: #b71c1c 0px 1px 30px; }
+
 #context {
   height: 1000px; }

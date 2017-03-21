@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Velas - 音乐</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <script src="./js/vue.js"></script>
+    <script src="./js/vue.min.js"></script>
     <!--build:js js/music.min.js -->
     <script src="./js/music.json.js"></script>
     <!--endbuild-->
@@ -32,22 +32,25 @@
             <div class="inner">
                 <h1>MUSIC</h1>
             </div>
+            <i class="fa fa-angle-double-down fa-2x down_icon" aria-hidden="true"></i>
         </div>
     </header>
     <div id="context" v-cloak>
         <div class="artist_list" v-for="artist in MusicCards" :style="{'background-image': 'url(' + artist.ArtistPic + ')'}">
             <div class="music_card_group" :style="{'background-color': artist.BackgroundColor }">
                 <h2 class="artist_name">{{artist.Artist}}</h2>
-                <div class="music_card" v-for="card in artist.Albums" :style="{'background-color': 'rgba(' + card.themeColor+',0.9)'}">
+                <div class="music_card" v-for="card in artist.Albums">
                     <img class="card_album" :src="card.albumPic" :alt="card.albumName">
-                    <div class="card_bg_content">
-                        <div class="bg_content_cover" :style="{'background-color': 'rgba(' + card.themeColor+',0.4)'}"></div>
-                        <div class="bg_content_blur" :style="{'background-image': 'url(' + card.albumPic + ')'}"></div>
-                    </div>
+                    <div class="card_bg_cover above_layer"></div>
+                    <div class="card_bg_cover" :style="{background: 'linear-gradient(to bottom,rgba(' + card.themeColor+',0.8),rgba('+ card.themeColor +',0.4) 80%,transparent)'}"></div>
                     <div class="card_info">
                         <h3 class="card_title">{{card.songTitle}}</h3>
                         <h4 class="card_album_name_artist"><span>{{card.albumName}}</span><span>{{card.albumYear}}</span></h4>
                         <p class="card_intro" v-html="card.albumIntro"></p>
+                    </div>
+                    <div class="card_bt_content">
+                        <div class="bt_content_cover" :style="{'background-color': 'rgba(' + card.themeColor+',0.5)'}"></div>
+                        <div class="bt_content_blur" :style="{'background-image': 'url(' + card.albumPic + ')'}"></div>
                     </div>
                 </div>
             </div>
@@ -70,6 +73,7 @@
         },
         mounted: function () {
             setActive(1);
+            setSubTitleActive(0);
             setType('dark');
         }
     });

@@ -29,8 +29,15 @@ var NT = {
 
 function setActive(index) {
     var liList = document.getElementById('navTitle').getElementsByTagName('li');
-    if (index < liList.length - 1) {
+    if (index < liList.length) {
         liList[index].className = 'active';
+    }
+}
+
+function setSubTitleActive(index) {
+    var subLiList = document.getElementById('subNavbar-Collection').getElementsByTagName('li');
+    if (index < subLiList.length) {
+        subLiList[index].className = 'active';
     }
 }
 

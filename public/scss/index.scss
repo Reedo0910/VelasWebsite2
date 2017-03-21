@@ -8,7 +8,7 @@
          attachment: fixed;
      }
  }
- 
+
  //过渡动画样式
  @mixin link-transition($time) {
      -webkit-transition: all $time ease-out;

@@ -1,6 +1,6 @@
 var musicData = [{
     Artist: 'Paramore',
-    ArtistPic: '../images/album/artist/paramore.jpg',
+    ArtistPic: './images/album/artist/paramore.jpg',
     BackgroundColor: 'rgba(90, 90, 90, 0.7)',
     Albums: [{
         albumPic: './images/album/riot!.jpg',
@@ -19,7 +19,7 @@ var musicData = [{
     }]
 }, {
     Artist: 'Avril Lavigne',
-    ArtistPic: '../images/album/artist/avril.jpg',
+    ArtistPic: './images/album/artist/avril.jpg',
     BackgroundColor: 'rgba(244, 244, 244, 0.7)',
     Albums: [{
         albumPic: './images/album/let_go.jpg',
@@ -40,7 +40,7 @@ var musicData = [{
         albumName: 'The Best Damn Thing',
         songTitle: 'Innocence',
         albumYear: 2007,
-        themeColor: '154, 127, 112',
+        themeColor: '235, 222, 188',
         albumIntro: '<span>时间来到了2007年，我们迎来了<em>The Best Damn Thing</em>。</span><span>三年过去了，<em>The Best Damn Thing</em>也让我们看到了两个字：“成长”。昔日那个一边弹着电吉他一边呐喊的朋克少女，如今却弹着钢琴哼唱着<em>When You\'re Gone</em>。时间没有使她变的平凡，反而赋予了她安静与温柔。这张专辑，会带你认识一个不一样的Avril Lavigne。</span>'
     }]
 }]

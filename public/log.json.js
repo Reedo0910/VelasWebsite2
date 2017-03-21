@@ -3,6 +3,11 @@ var logJson = [{
     monthLists:[{
         month:3,
         dayLists:[{
+            day:21,
+            logList:[
+                '完成了Music页的排版与布局'
+            ]
+        },{
             day:20,
             logList:[
                 '优化了文件结构，缩短了第一次打开网页时文件的请求时间','修复了Log页当当日只有一条更新日志时，项目符号无法切换的bug','优化了导航栏的动画细节'
