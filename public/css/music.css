@@ -1,32 +1,25 @@
-body {
-  background-color: #444;
-  background-image: url("../images/family_hero_large.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 0 0;
-  background-attachment: fixed; }
+@font-face {
+  font-family: "Qwigley Regular";
+  src: url("../fonts/Qwigley-Regular.ttf"); }
 
 header {
+  background-color: #512da8;
   width: 100%;
   min-height: 700px; }
   header #banner .inner {
     max-width: 540px;
     margin: 0 auto;
     position: relative;
-    top: 200px;
+    top: 270px;
     color: #fff;
     box-sizing: border-box;
-    text-shadow: #666 0px 1px 3px; }
+    text-shadow: #4a148c 0px 1px 30px; }
     header #banner .inner h1 {
+      font-family: Qwigley Regular;
       line-height: 90px;
-      font-size: 40px;
-      letter-spacing: 10px; }
-    header #banner .inner h2 {
-      font-size: 30px;
-      letter-spacing: 5px; }
-    header #banner .inner h1,
-    header #banner .inner h2 {
-      font-weight: 500;
+      font-size: 15em;
+      letter-spacing: 10px;
+      font-weight: 300;
       margin: 0 auto; }
 
 #context {
@@ -41,27 +34,29 @@ header {
       height: 100%;
       position: relative;
       display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap; }
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      padding: 150px 0 150px; }
       #context .artist_list .music_card_group .artist_name {
         position: absolute;
-        left: -100px;
+        left: -25px;
         top: 100px;
         color: rgba(255, 255, 255, 0.5);
-        font-size: 4em;
+        font-size: 5em;
         letter-spacing: 2px;
-        transform: rotate(90deg); }
+        writing-mode: vertical-lr; }
       #context .artist_list .music_card_group .music_card {
         flex-shrink: 0;
-        background-color: #444;
         color: #fff;
         width: 650px;
         padding: 20px 20px 30px;
-        margin: 60px 100px;
+        margin: 60px 150px;
         position: relative;
-        box-shadow: #000 0 0 10px; }
+        box-shadow: #000 0 0 10px;
+        border-radius: 10px; }
         #context .artist_list .music_card_group .music_card .card_album {
           position: absolute;
+          z-index: 5;
           left: -100px;
           top: 30px;
           width: 300px;
@@ -79,11 +74,12 @@ header {
               display: block; }
         #context .artist_list .music_card_group .music_card .card_bg_content {
           width: 100%;
-          height: 10px;
+          height: 15px;
           overflow: hidden;
           position: absolute;
           bottom: 0;
-          left: 0; }
+          left: 0;
+          border-radius: 0 0 30px 30px; }
           #context .artist_list .music_card_group .music_card .card_bg_content .bg_content_cover {
             width: 100%;
             height: 100%;
@@ -93,8 +89,10 @@ header {
             left: 0; }
           #context .artist_list .music_card_group .music_card .card_bg_content .bg_content_blur {
             background-size: cover;
-            filter: blur(10px);
+            filter: blur(8px);
             width: 100%;
             height: 100%;
             position: relative;
             z-index: 0; }
+        #context .artist_list .music_card_group .music_card .card_album_name_artist span + span {
+          margin-left: 3em; }
