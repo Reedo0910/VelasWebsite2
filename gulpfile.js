@@ -72,7 +72,7 @@ gulp.task('useref', function () {
     return gulp.src('public/*.html')
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
-        .pipe(gulpIf('*.css', cssnano()))
+        .pipe(gulpIf('*.css', cssnano({zindex: false})))
         .pipe(gulp.dest('dist'))
 })
 
