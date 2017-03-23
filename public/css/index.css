@@ -50,7 +50,7 @@ header {
   background-color: #eee;
   position: relative;
   text-align: center;
-  box-shadow: #444 0 0 30px;
+  box-shadow: #444 0 0 10px;
   padding-bottom: 60px; }
   .context .context-big-headtitle {
     text-transform: uppercase;

@@ -5,7 +5,8 @@
 header {
   background-color: #e53935;
   width: 100%;
-  min-height: 700px; }
+  min-height: 700px;
+  position: relative; }
   header #banner .inner {
     position: relative;
     text-align: center;
@@ -20,10 +21,10 @@ header {
       letter-spacing: 10px;
       font-weight: 300;
       margin: 0 auto; }
-  header #banner .down_icon {
+  header .down_icon {
     color: #fff;
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     left: 50%;
     text-shadow: #b71c1c 0px 1px 30px; }
 

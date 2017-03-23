@@ -15,22 +15,13 @@ nav {
     float: right; }
     nav ul li {
       display: inline-block; }
-      nav ul li i.rotate {
-        -webkit-transition: all 0.3s ease-out;
-        -moz-transition: all 0.3s ease-out;
-        transition: all 0.3s ease-out; }
       nav ul li a {
         color: #ccc;
         -webkit-transition: all 0.2s ease-out;
         -moz-transition: all 0.2s ease-out;
         transition: all 0.2s ease-out; }
       nav ul li.active a,
-      nav ul li a:active {
-        -webkit-transition: all 0.2s ease-out;
-        -moz-transition: all 0.2s ease-out;
-        transition: all 0.2s ease-out;
-        color: #fff; }
-      nav ul li:not(.active) a:hover {
+      nav ul li a:hover {
         -webkit-transition: all 0.2s ease-out;
         -moz-transition: all 0.2s ease-out;
         transition: all 0.2s ease-out;

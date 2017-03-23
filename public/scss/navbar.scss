@@ -21,19 +21,12 @@ nav {
         float: right;
         li {
             display: inline-block;
-            i.rotate {
-                @include link-transition(0.3s);
-            }
             a {
                 color: #ccc;
                 @include link-transition(0.2s);
             }
             &.active a,
-            a:active {
-                @include link-transition(0.2s);
-                color: #fff;
-            }
-            &:not(.active) a:hover {
+            a:hover {
                 @include link-transition(0.2s);
                 color: #fff;
             }

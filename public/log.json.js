@@ -3,6 +3,11 @@ var logJson = [{
     monthLists:[{
         month:3,
         dayLists:[{
+            day:22,
+            logList:[
+                '导航栏及部分页面逻辑修复'
+            ]
+        },{
             day:21,
             logList:[
                 '完成了Music页的排版与布局'
